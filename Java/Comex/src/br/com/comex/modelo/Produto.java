@@ -1,7 +1,8 @@
 package br.com.comex.modelo;
 
+
 public class Produto {
-	private int ID;
+	private long ID;
 	private String Nome;
 	private String Descricao;
 	private static double PrecoUnitario;
@@ -11,17 +12,34 @@ public class Produto {
 	static double TotalEstoque;
 
 
-	public Produto(int iD, String nome, String descricao, double precoUnitario, int quantidadeEstoque, Categoria categoria) {
-		super();
-		ID = iD;
-		Nome = nome;
-		Descricao = descricao;
-		PrecoUnitario = precoUnitario;
-		QuantidadeEstoque = quantidadeEstoque;
-		Categoria = categoria;
-
+	public Produto(long ID, String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque,
+			Categoria Categoria) {
+		if (ID <0 ) {
+			String msg = "ID inválido!  " + ID;
+			throw new IllegalArgumentException(msg);
+		}
+			
+		int QtdCaracteresNome = Nome.length();
+		if (QtdCaracteresNome < 6) {
+			String msg = "Nome inválido!  " + Nome;
+			throw new IllegalArgumentException(msg);
+		}
+		if(PrecoUnitario <=0){
+			String msg = "Valor inválido!  " + Nome;
+			throw new IllegalArgumentException(msg);
+		}
+		if(QuantidadeEstoque <=0){
+			String msg = "Estoque inválido!  " + Nome;
+			throw new IllegalArgumentException(msg);
+		}
+		this.ID = ID;
+		this.Nome = Nome;
+		this.Descricao = Descricao;
+		this.PrecoUnitario = PrecoUnitario;
+		this.QuantidadeEstoque = QuantidadeEstoque;
+		this.Categoria = Categoria;
 	}
-
+	
 	public static double CalculaValorEstoque() {
 		TotalEstoque = (PrecoUnitario * QuantidadeEstoque);
 		return TotalEstoque;
@@ -36,47 +54,47 @@ public class Produto {
 		return ID;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public void setID(int newID) {
+		ID = newID;
 	}
 
 	public String getNome() {
 		return Nome;
 	}
 
-	public void setNome(String nome) {
-		Nome = nome;
+	public void setNome(String newNome) {
+		Nome = newNome;
 	}
 
 	public String getDescricao() {
 		return Descricao;
 	}
 
-	public void setDescricao(String descricao) {
-		Descricao = descricao;
+	public void setDescricao(String newDescricao) {
+		Descricao = newDescricao;
 	}
 
 	public static double getPrecoUnitario() {
 		return PrecoUnitario;
 	}
 
-	public static void setPrecoUnitario(double precoUnitario) {
-		PrecoUnitario = precoUnitario;
+	public static void setPrecoUnitario(double newPrecoUnitario) {
+		PrecoUnitario = newPrecoUnitario;
 	}
 
 	public static int getQuantidadeEstoque() {
 		return QuantidadeEstoque;
 	}
 
-	public static void setQuantidadeEstoque(int quantidadeEstoque) {
-		QuantidadeEstoque = quantidadeEstoque;
+	public static void setQuantidadeEstoque(int newQuantidadeEstoque) {
+		QuantidadeEstoque = newQuantidadeEstoque;
 	}
 
 	public static Categoria getCategoria() {
 		return Categoria;
 	}
 
-	public static void setCategoria(Categoria categoria) {
-		Categoria = categoria;
+	public static void setCategoria(Categoria newCategoria) {
+		Categoria = newCategoria;
 	}
 }

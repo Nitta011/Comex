@@ -2,25 +2,38 @@ package Teste;
 import br.com.comex.modelo.StatusCategoria;
 
 public class TesteCategoria {
-	private static long ProximoID =0;
-	private long ID = ProximoID++;
+	private static long ProximoID =1;
+	private long ID;
 	private String Nome;
 	private StatusCategoria status = StatusCategoria.ATIVA;
 	
-	public TesteCategoria(long ID,String Nome, StatusCategoria status) {
-		if (ID <= 0) {
+	public TesteCategoria(long ID, String Nome, StatusCategoria status) {
+		if (ID != ProximoID) {
 			String msg = "ID inválido!  " + ID;
 			throw new IllegalArgumentException(msg);
-		} else {
-			this.ID = ID;
 		}
 		int QtdCaracteresNome = Nome.length();
 		if (QtdCaracteresNome < 4) {
 			String msg = "Nome inválido!  " + Nome;
 			throw new IllegalArgumentException(msg);
-		} else {
-			this.Nome = Nome;
 		}
+		this.ID = ID;
+		this.Nome = Nome;
+		this.status = StatusCategoria.ATIVA;
+		ProximoID++;
+	}
+	
+	public TesteCategoria(String Nome) {
+		int QtdCaracteresNome = Nome.length();
+		if (QtdCaracteresNome < 4) {
+			String msg = "Nome inválido!  " + Nome;
+			throw new IllegalArgumentException(msg);
+		}
+		this.ID = ProximoID;
+		this.Nome = Nome;
+		this.status = StatusCategoria.ATIVA;
+		ProximoID++;
+		
 	}
 	
 	

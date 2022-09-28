@@ -1,0 +1,59 @@
+package br.com.comex.modelo;
+
+public class Categoria {
+	private static long ProximoID =1;
+	private long ID;
+	private String Nome;
+	private StatusCategoria status = StatusCategoria.ATIVA;
+	
+	public Categoria(long ID, String Nome, StatusCategoria status) {
+
+			if (ID != ProximoID) {
+				String msg = "ID inválido!  " + ID;
+				throw new IllegalArgumentException(msg);
+			}
+			int QtdCaracteresNome = Nome.length();
+			if (QtdCaracteresNome < 4) {
+				String msg = "Nome inválido!  " + Nome;
+				throw new IllegalArgumentException(msg);
+			}
+			this.ID = ID;
+			this.Nome = Nome;
+			this.status = StatusCategoria.ATIVA;
+			ProximoID++;
+		}	
+		 
+
+	public long getID() {
+		return ID;
+	}
+
+	public void setID(long ID) {
+		if (ID <= 0) {
+			System.out.println("ID inválido! ");
+		} else {
+			this.ID = ID;
+		}
+	}
+
+	public String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String Nome) {
+		int QtdCaracteresNome = Nome.length();
+		if (QtdCaracteresNome <= 2) {
+			System.out.println("Nome inválido! ");
+		} else {
+			this.Nome = Nome;
+		}
+	}
+
+	public StatusCategoria getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusCategoria status) {
+		this.status = status;
+	}
+}

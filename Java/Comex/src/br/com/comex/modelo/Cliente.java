@@ -1,7 +1,8 @@
 package br.com.comex.modelo;
 
 public class Cliente {
-	private int ID;
+	private static long ProximoID =1;
+	private long ID;
 	private String Nome;
 	private int CPF;
 	private int Telefone;
@@ -12,8 +13,13 @@ public class Cliente {
 	private String Cidade;
 	private String Estado;
 
-	public Cliente(int ID, String Nome, int CPF, int Telefone, String Rua, String Numero, String Complemento, String Bairro,
+	public Cliente(long ID, String Nome, int CPF, int Telefone, String Rua, String Numero, String Complemento, String Bairro,
 			String Cidade, String Estado) {
+		
+		if (ID != ProximoID) {
+			String msg = "ID inválido!  " + ID;
+			throw new IllegalArgumentException(msg);
+		}
 		this.ID = ID;
 		this.Nome = Nome;
 		this.CPF = CPF;
@@ -24,9 +30,25 @@ public class Cliente {
 		this.Bairro = Bairro;
 		this.Cidade = Cidade;
 		this.Estado = Estado;
+		ProximoID++;
+	}
+
+	public Cliente(String Nome, int CPF, int Telefone, String Rua, String Numero, String Complemento, String Bairro,
+	String Cidade, String Estado) {
+		this.ID = ProximoID;
+		this.Nome = Nome;
+		this.CPF = CPF;
+		this.Telefone = Telefone;
+		this.Rua = Rua;
+		this.Numero = Numero;
+		this.Complemento = Complemento;
+		this.Bairro = Bairro;
+		this.Cidade = Cidade;
+		this.Estado = Estado;
+		ProximoID++;
 	}
 	
-	public int getID() {
+	public long getID() {
 		return ID;
 	}
 

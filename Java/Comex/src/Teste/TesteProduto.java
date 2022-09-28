@@ -1,6 +1,7 @@
 package Teste;
 
 public class TesteProduto {
+	protected long ProximoID = 1;
 	private long ID;
 	private String Nome;
 	private static String Descricao;
@@ -10,21 +11,52 @@ public class TesteProduto {
 	static double Imposto;
 	static double TotalEstoque;
 
-	public TesteProduto(String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque,
+	public TesteProduto(int ID, String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque,
 			TesteCategoria Categoria) {
-		if (ID <= 0) {
+		if (ID != ProximoID ) {
 			String msg = "ID inválido!  " + ID;
 			throw new IllegalArgumentException(msg);
-		} else {
-			this.ID = ID;
 		}
+			
 		int QtdCaracteresNome = Nome.length();
 		if (QtdCaracteresNome < 6) {
 			String msg = "Nome inválido!  " + Nome;
 			throw new IllegalArgumentException(msg);
-		} else {
-			this.Nome = Nome;
 		}
+		if(PrecoUnitario <=0){
+			String msg = "Valor inválido!  " + Nome;
+			throw new IllegalArgumentException(msg);
+		}
+		if(QuantidadeEstoque <=0){
+			String msg = "Estoque inválido!  " + Nome;
+			throw new IllegalArgumentException(msg);
+		}
+		this.ID = ProximoID;
+		this.Nome = Nome;
+		this.Descricao = Descricao;
+		this.PrecoUnitario = PrecoUnitario;
+		this.QuantidadeEstoque = QuantidadeEstoque;
+		this.Categoria = Categoria;
+		this.TotalEstoque = TotalEstoque;
+		ProximoID++;
+	}
+	
+	public TesteProduto(String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque,
+			TesteCategoria Categoria) {
+
+		int QtdCaracteresNome = Nome.length();
+		if (QtdCaracteresNome < 6) {
+			String msg = "Nome inválido!  " + Nome;
+			throw new IllegalArgumentException(msg);
+		}
+		this.ID = ProximoID;
+		this.Nome = Nome;
+		this.Descricao = Descricao;
+		this.PrecoUnitario = PrecoUnitario;
+		this.QuantidadeEstoque = QuantidadeEstoque;
+		this.Categoria = Categoria;
+		this.TotalEstoque = TotalEstoque;
+		ProximoID++;
 	}
 
 	public static double CalculaValorEstoque() {

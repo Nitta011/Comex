@@ -1,0 +1,14 @@
+package Teste;
+
+import br.com.comex.modelo.StatusCategoria;
+
+public class TesteMainCategoria {
+
+
+	public static void main(String[] args) {
+
+		TesteCategoria categoria0 = new TesteCategoria("LAAU");
+		System.out.println("Categoria " + categoria0.getNome() + " ( " + categoria0.getID() + " - "
+				+ categoria0.getStatus() + ")");
+	}
+}
