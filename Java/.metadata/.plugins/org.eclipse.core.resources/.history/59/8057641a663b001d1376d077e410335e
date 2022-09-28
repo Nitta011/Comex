@@ -1,0 +1,23 @@
+
+public class MainProduto extends ProdutoIsento {
+	public MainProduto(int ID, String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque,
+			Categoria Categoria) {
+		super();
+	}
+
+	public static void main(String[] args) {
+		ProdutoIsento Produto2 = new ProdutoIsento();
+		Categoria categoria2 = new Categoria();
+		Produto2.setID(2);
+		Produto2.setNome("Clean Architecture");
+		Produto2.setDescricao(null);
+		Produto2.setPrecoUnitario(102.90);
+		Produto2.setQuantidadeEstoque(2);
+		Produto2.setCategoria(categoria2);
+		System.out.println("O produto: " + Produto2.getNome() + ", cuja categoria é: "
+				+ categoria2 + ", utilizando o ID; " + Produto2.getID() + ", está custando R$: "
+				+ Produto2.getPrecoUnitario() + ", temos " + Produto2.getQuantidadeEstoque() + " unidade(s) em estoque."
+				+ " O valor total em estoque desse produto é: " + CalculaValorEstoqueIsento()
+				+ " e o valor do imposto sobre o produto é de: " + ImpostoIsento());
+	}
+}

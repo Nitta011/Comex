@@ -1,0 +1,54 @@
+
+public class Categoria{
+
+	private static long ID;
+	private static String Nome;
+	private static StatusCategoria status = StatusCategoria.ATIVA;
+	
+	public Categoria() {
+		this.ID = ID;
+		this.Nome = Nome;
+		this.status = status;
+		
+	}
+
+	public static void main(String[] args) 
+	 {
+		try {
+			getID();
+			getNome();
+			getStatus();
+			int NumeroDeCaracteresNome = Nome.length();
+			NumeroDeCaracteresNome = 2;
+			ID = 0;	
+			} catch (IllegalArgumentException ex) {
+			System.out.println("Deu merda");	
+			}	
+		
+	}
+	
+	public static long getID() {
+		return ID;
+	}
+
+	public void setID(long iD) {
+		this.ID = iD;
+	}
+
+	public static String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String nome) {
+		this.Nome = nome;
+	}
+
+	public static StatusCategoria getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusCategoria status) {
+		this.status = status;
+	}
+	
+}

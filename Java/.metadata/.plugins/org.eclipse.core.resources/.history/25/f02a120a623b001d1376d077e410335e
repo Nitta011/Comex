@@ -1,0 +1,78 @@
+
+
+
+public class Produto {
+	private long ID;
+	protected static String Nome;
+	protected String Descricao;
+	protected static double PrecoUnitario;
+	protected static int QuantidadeEstoque;
+	protected Categoria Categoria;
+	protected static double Imposto;
+	protected static double TotalEstoque;
+	
+	public static double CalculaValorEstoque() {
+		TotalEstoque = (PrecoUnitario*QuantidadeEstoque);
+		return TotalEstoque;
+	}
+	
+	public static double CalculaImposto() {
+		Imposto = (PrecoUnitario*0.4);
+		return Imposto;
+		 
+	}
+
+	public long getID() {
+		return ID;
+	}
+
+	public void setID(long iD) {
+		ID = iD;
+	}
+
+	public String getNome() {
+		return Nome;
+	}
+
+	public static void setNome(String nome) {
+		Nome = nome;
+	}
+
+	public String getDescricao() {
+		return Descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.Descricao = descricao;
+	}
+
+	public static double getPrecoUnitario() {
+		return PrecoUnitario;
+	}
+
+	public static void setPrecoUnitario(double precoUnitario) {
+		PrecoUnitario = precoUnitario;
+	}
+
+	public static int getQuantidadeEstoque() {
+		return QuantidadeEstoque;
+	}
+
+	public static void setQuantidadeEstoque(int quantidadeEstoque) {
+		QuantidadeEstoque = quantidadeEstoque;
+	}
+
+	public Categoria getCategoria() {
+		return Categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		Categoria = categoria;
+	}
+
+
+	
+	
+}
+
+	

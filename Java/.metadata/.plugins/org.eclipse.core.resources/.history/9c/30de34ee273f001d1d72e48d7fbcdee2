@@ -1,0 +1,52 @@
+
+public class TesteCategoria {
+
+	private int ID;
+	public String Nome;
+	private StatusCategoria status = StatusCategoria.ATIVA;
+	
+	public TesteCategoria() {
+		if (ID <= 0) {
+			String msg = "ID inválido!  " + ID;
+			throw new IllegalArgumentException(msg);
+		} else {
+			this.ID = ID;
+		}
+	}
+	
+	
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int newID) {
+		if (ID <= 0) {
+			String msg = "ID inválido!  " + newID;
+			throw new IllegalArgumentException(msg);
+		} else {
+			this.ID = newID;
+		}
+	}
+
+	public String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String newNome) {
+		int QtdCaracteresNome = newNome.length();
+		if (QtdCaracteresNome <= 2) {
+			String msg = "Nome inválido!  " + newNome;
+			throw new IllegalArgumentException(msg);
+		} else {
+			this.Nome = newNome;
+		}
+	}
+
+	public StatusCategoria getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusCategoria newstatus) {
+		this.status = newstatus;
+	}
+}

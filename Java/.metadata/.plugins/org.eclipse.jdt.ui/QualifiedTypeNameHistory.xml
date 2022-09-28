@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
+    <fullyQualifiedTypeName name="CalculaValorEstoque"/>
+    <fullyQualifiedTypeName name="Produto"/>
+    <fullyQualifiedTypeName name="java.lang.StrictMath"/>
+    <fullyQualifiedTypeName name="Pedido"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="ItemPedido"/>
+    <fullyQualifiedTypeName name="MainCategoria"/>
+    <fullyQualifiedTypeName name="ProdutoIsento"/>
+    <fullyQualifiedTypeName name="MinhaExcecao"/>
+    <fullyQualifiedTypeName name="Categoria"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="StatusCategoria"/>
+</qualifiedTypeNameHistroy>

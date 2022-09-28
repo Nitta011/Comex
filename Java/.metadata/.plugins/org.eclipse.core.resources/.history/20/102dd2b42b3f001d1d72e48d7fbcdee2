@@ -1,0 +1,85 @@
+package Teste;
+
+public class TesteProduto {
+		private int ID;
+		private String Nome;
+		private String Descricao;
+		private static double PrecoUnitario;
+		private static int QuantidadeEstoque;
+		private static TesteCategoria Categoria;
+		static double Imposto;
+		static double TotalEstoque;
+
+
+		public TesteProduto(int iD, String nome, String descricao, 
+			double precoUnitario, int quantidadeEstoque, TesteCategoria Categoria) {
+			if (ID <= 0) {
+				String msg = "ID inválido!  " + ID;
+				throw new IllegalArgumentException(msg);
+			} else {
+				this.ID = ID;
+			}
+			
+			
+			
+		}
+
+		public static double CalculaValorEstoque() {
+			TotalEstoque = (PrecoUnitario * QuantidadeEstoque);
+			return TotalEstoque;
+		}
+
+		public static double CalculaImposto() {
+			Imposto = (PrecoUnitario * 0.4);
+			return Imposto;
+		}
+
+		public long getID() {
+			return ID;
+		}
+
+		public void setID(int ID) {
+			this.ID = ID;
+		}
+
+		public String getNome() {
+			return Nome;
+		}
+
+		public void setNome(String nome) {
+			this.Nome = nome;
+		}
+
+		public String getDescricao() {
+			return Descricao;
+		}
+
+		public void setDescricao(String descricao) {
+			this.Descricao = descricao;
+		}
+
+		public double getPrecoUnitario() {
+			return PrecoUnitario;
+		}
+
+		public  void setPrecoUnitario(double precoUnitario) {
+			this.PrecoUnitario = precoUnitario;
+		}
+
+		public int getQuantidadeEstoque() {
+			return QuantidadeEstoque;
+		}
+
+		public void setQuantidadeEstoque(int quantidadeEstoque) {
+			this.QuantidadeEstoque = quantidadeEstoque;
+		}
+
+		public TesteCategoria getCategoria() {
+			return Categoria;
+		}
+
+		public void setCategoria(TesteCategoria categoria) {
+			this.Categoria = categoria;
+		}
+
+}

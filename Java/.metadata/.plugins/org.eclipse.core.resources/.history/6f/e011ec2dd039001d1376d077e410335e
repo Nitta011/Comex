@@ -1,0 +1,9 @@
+
+public class MainCliente extends Cliente {
+
+	public MainCliente(int ID, String Nome) {
+		super(ID, Nome);
+		
+	}
+	
+}

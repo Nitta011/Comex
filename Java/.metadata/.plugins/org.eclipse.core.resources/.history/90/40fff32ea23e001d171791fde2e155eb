@@ -1,0 +1,61 @@
+
+public class Categoria{
+
+	private static long ID;
+	private static String Nome;
+	private static StatusCategoria status = StatusCategoria.ATIVA;
+	
+	public Categoria() {
+		this.ID = ID;
+		this.Nome = Nome;
+		this.status = status;
+		
+	}
+
+	
+	public long getID() {
+		
+		return ID;
+	}
+
+	public void setID(long iD) {
+		if(ID < 0) {
+			
+		}
+		
+		this.ID = iD;
+	}
+
+	public static String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String Nome) {
+		int QtdCaracteresNome = Nome.length();
+		if(QtdCaracteresNome <= 3){
+			System.out.println("Nome inválido! ");
+		} else {
+		this.Nome = Nome;
+	}
+	}
+
+	public StatusCategoria getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusCategoria status) {
+		this.status = status;
+	}
+	
+	public static void main(String[] args) 
+	 {
+		try {
+			getNome().length();
+			ID = 0;	
+			} catch (IllegalArgumentException | NullPointerException ex) {
+			System.out.println("Deu merda " + ex);	
+			}	
+		
+	}
+	
+}

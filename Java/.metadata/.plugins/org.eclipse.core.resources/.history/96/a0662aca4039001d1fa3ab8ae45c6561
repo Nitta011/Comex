@@ -1,0 +1,14 @@
+
+public class Teste extends Produto{
+	public Teste(int ID, String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque, String Categoria) {
+		super(ID, Nome, Descricao, PrecoUnitario, QuantidadeEstoque, Categoria);
+	}
+
+	public double CalculaImposto() {
+		Produto.setPrecoUnitario(144.29);
+		Imposto = (Produto.PrecoUnitario * 0.40);
+		System.out.println("O Imposto obtido em cima desse produto é de: " + Imposto);
+		return ID;
+
+	}
+}

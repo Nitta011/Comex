@@ -1,0 +1,16 @@
+import java.io.PrintStream;
+
+public class MainCategoria{
+		public static void main(String[] args){
+			
+			categoria informatica = new categoria(1, "INFORMÁTICA", "Ativo");
+		    System.out.println("Categoria " + informatica.Nome+ " (" + informatica.ID + " - " + informatica.Status + ") ");
+		    categoria moveis = new categoria(1, "MÓVEIS", "Inativo");
+		    System.out.println("Categoria " + moveis.Nome+ " (" + moveis.ID + " - " + moveis.Status + ") ");
+		    categoria livros = new categoria(3, "LIVROS", "Ativo");
+		    System.out.println("Categoria " + livros.Nome+ " (" + livros.ID + " - " + livros.Status + ") ");
+		    categoria Categoria = new categoria(0, null, null);
+			System.out.println(categoria.getNome());
+		}
+
+}

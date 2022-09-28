@@ -1,0 +1,22 @@
+
+
+
+public class ProdutoIsento extends Produto{
+
+
+	public ProdutoIsento() {
+		super(QuantidadeEstoque, Descricao, Descricao, Imposto, QuantidadeEstoque, Categoria);
+		
+	}
+
+	public static double ImpostoIsento() {
+		Imposto = 0.0;
+		return Imposto;
+	}
+	
+	public static double CalculaValorEstoqueIsento() {
+		TotalEstoque = (ProdutoIsento.PrecoUnitario*ProdutoIsento.QuantidadeEstoque);
+		return TotalEstoque;
+	}
+	
+}

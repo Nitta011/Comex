@@ -1,0 +1,4 @@
+
+public class MainPedido extends Pedido{
+
+}

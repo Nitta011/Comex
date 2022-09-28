@@ -1,0 +1,65 @@
+
+public class Categoria {
+
+	private long ID;
+	private String Nome;
+	private StatusCategoria status = StatusCategoria.ATIVA;
+
+	public Categoria() {
+		try {			
+			this.status = status;	
+			if (ID < 0) {
+				System.out.println("ID inválido! ");
+			} else {
+				this.ID = ID;
+			}
+			int QtdCaracteresNome = Nome.length();
+			if (QtdCaracteresNome <= 2) {
+				System.out.println("Nome inválido! ");
+			} else {
+				this.Nome = Nome;
+			}
+			
+		} catch (IllegalArgumentException ex) {
+			String msg = ex.getMessage();
+			System.out.println("Erro " + msg);
+		}
+	}
+
+	public long getID() {
+		return ID;
+	}
+
+	public void setID(long ID) {
+//		if (ID < 0) {
+//			System.out.println("ID inválido! ");
+//		} else {
+			this.ID = ID;
+//		}
+	}
+
+	public String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String Nome) {
+//		int QtdCaracteresNome = Nome.length();
+//		if (QtdCaracteresNome <= 2) {
+//			System.out.println("Nome inválido! ");
+//		} else {
+			this.Nome = Nome;
+//		}
+
+	}
+
+	public StatusCategoria getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusCategoria status) {
+
+		this.status = status;
+
+	}
+
+}

@@ -1,0 +1,47 @@
+
+
+
+public class Cliente {
+	protected int ID;
+	protected String Nome;
+	protected int CPF;
+	protected int Telefone;
+	protected String Rua;
+	protected String Numero;
+	protected String Complemento;
+	protected String Bairro;
+	protected String Cidade;
+	protected String Estado;
+
+
+	public int getID() {
+	return ID;
+	}
+	public String getNome() {
+		return Nome;
+	}
+	public int getCPF() {
+		return CPF;
+	}
+	public int getTelefone() {
+		return Telefone;
+	}
+	public String getRua() {
+		return Rua;
+	}
+	public String getNumero() {
+		return Numero;
+	}
+	public String getComplemento() {
+		return Complemento;
+	}
+	public String getBairro() {
+		return Bairro;
+	}
+	public String getCidade() {
+		return Cidade;
+	}
+	public String getEstado() {
+		return Estado;
+	}
+}

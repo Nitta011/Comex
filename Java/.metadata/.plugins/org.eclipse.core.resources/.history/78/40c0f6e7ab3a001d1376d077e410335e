@@ -1,0 +1,26 @@
+
+public class ItemPedido extends Produto{
+	public ItemPedido(int ID, String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque,
+			String Categoria) {
+		super(ID, Nome, Descricao, PrecoUnitario, QuantidadeEstoque, Categoria);
+
+	}
+	String Produto;
+	String Pedido;
+	double Desconto;
+	String TipoDesconto;
+	
+	
+	public String getProduto() {
+		return this.Produto;
+	}
+	public String getPedido() {
+		return this.Pedido;
+	}
+	public double getDesconto() {
+		return this.Desconto;
+	}
+	public String getTipoDesconto() {
+		return this.TipoDesconto;
+	}
+}

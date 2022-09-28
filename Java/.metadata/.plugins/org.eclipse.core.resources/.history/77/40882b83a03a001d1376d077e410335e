@@ -1,0 +1,16 @@
+import java.util.Date;
+
+
+public class Pedido {
+	int ID;
+	Date Data;
+	String Nome;
+	
+	public Pedido() {
+		this.ID = ID;
+		this.Data = Data;
+		this.Nome = Nome;
+	}
+	
+	
+}

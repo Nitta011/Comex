@@ -1,0 +1,6 @@
+
+public class MainPedido extends Pedido{
+	public static void main(String[] args) {
+		Pedido pedido1 = new Pedido (1, "18/02/2002", "Ana");
+	}
+}

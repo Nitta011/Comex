@@ -1,0 +1,55 @@
+
+public class Categoria {
+
+	private int ID;
+	private String Nome;
+	private StatusCategoria status = StatusCategoria.ATIVA;
+
+	public Categoria() {
+//		try {
+			this.ID = ID;
+			this.Nome = Nome;
+			this.status = status;
+
+//		} catch (IllegalArgumentException ex) {
+//			System.out.println("Erro " + ex.getMessage());
+//		}
+	}
+
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int ID) {
+		if (ID <= 0) {
+			System.out.println("ID inválido! ");
+		} else {
+			this.ID = ID;
+		}
+	}
+
+	public String getNome() {
+		return Nome;
+	}
+
+	public void setNome(String Nome) {
+		try { 
+		int QtdCaracteresNome = Nome.length();
+		if (QtdCaracteresNome <= 2) {
+			System.out.println("Nome inválido! ");
+		} else {
+			this.Nome = Nome;
+		}
+		} catch(IllegalArgumentException ex) {
+			System.out.println("Erro " + ex.getMessage());
+		}
+	}
+
+	public StatusCategoria getStatus() {
+		return status;
+	}
+
+	public void setStatus(StatusCategoria status) {
+		this.status = status;
+	}
+}
