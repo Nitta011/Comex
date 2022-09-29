@@ -14,7 +14,8 @@
     <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
     <fullyQualifiedTypeName name="StatusCategoria"/>
     <fullyQualifiedTypeName name="Teste.TesteProdutoIsento"/>
-    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
     <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
     <fullyQualifiedTypeName name="br.com.comex.modelo.StatusCategoria"/>
+    <fullyQualifiedTypeName name="br.com.comex.enums.estados"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
 </qualifiedTypeNameHistroy>

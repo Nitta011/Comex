@@ -1,5 +1,7 @@
 package br.com.comex.modelo;
 
+import br.com.comex.enums.StatusCategoria;
+
 public class Categoria {
 	private static long ProximoID =1;
 	private long ID;

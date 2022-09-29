@@ -1,5 +1,5 @@
 package Teste;
-import br.com.comex.modelo.StatusCategoria;
+import br.com.comex.enums.StatusCategoria;
 
 public class TesteCategoria {
 	private static long ProximoID =1;

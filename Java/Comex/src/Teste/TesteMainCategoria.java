@@ -1,6 +1,6 @@
 package Teste;
 
-import br.com.comex.modelo.StatusCategoria;
+import br.com.comex.enums.StatusCategoria;
 
 public class TesteMainCategoria {
 
