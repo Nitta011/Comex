@@ -1,0 +1,13 @@
+package br.com.comex.modelo;
+
+import java.util.Date;
+import br.com.comex.modelo.Cliente;
+
+public class Pedido {
+	
+	private int ID;
+	private Date Data;
+	private Cliente cliente;
+}
+
+

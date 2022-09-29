@@ -1,0 +1,18 @@
+package br.com.comex.main;
+import br.com.comex.modelo.Pedido;
+
+public class MainPedido {
+	
+public static void main(String[] args) {
+	try {
+		Pedido pedido1 = new Pedido("24/12/2021", cliente1);
+		
+		
+		
+	}catch(IllegalArgumentException ex){
+		
+	}
+	
+	
+}
+}

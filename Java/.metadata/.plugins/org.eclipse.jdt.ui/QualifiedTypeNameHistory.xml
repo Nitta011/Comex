@@ -5,7 +5,6 @@
     <fullyQualifiedTypeName name="Produto"/>
     <fullyQualifiedTypeName name="java.lang.StrictMath"/>
     <fullyQualifiedTypeName name="Pedido"/>
-    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="ItemPedido"/>
     <fullyQualifiedTypeName name="MainCategoria"/>
     <fullyQualifiedTypeName name="ProdutoIsento"/>
@@ -16,6 +15,11 @@
     <fullyQualifiedTypeName name="Teste.TesteProdutoIsento"/>
     <fullyQualifiedTypeName name="javax.swing.plaf.synth.SynthOptionPaneUI"/>
     <fullyQualifiedTypeName name="br.com.comex.modelo.StatusCategoria"/>
-    <fullyQualifiedTypeName name="br.com.comex.enums.estados"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+    <fullyQualifiedTypeName name="javax.sound.sampled.TargetDataLine"/>
+    <fullyQualifiedTypeName name="br.com.comex.modelo.Cliente"/>
+    <fullyQualifiedTypeName name="br.com.comex.enums.estados"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="br.com.comex.modelo.Pedido"/>
 </qualifiedTypeNameHistroy>
