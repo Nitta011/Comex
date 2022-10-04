@@ -1,0 +1,26 @@
+package br.com.comex.modelo;
+
+import br.com.comex.enums.TipoDesconto;
+
+public class CalculaValorTotal {
+	private TipoDesconto tipoDesconto;
+	private double Desconto;
+	private double PrecoUnitario;
+	private double PrecoFinal;
+	private double Quantidade;
+	
+	
+	public static double CalculaValorTotal() {
+		if(tipoDesconto == TipoDesconto.NENHUM) {
+			Desconto = 0.0;
+			PrecoFinal = (Desconto * PrecoUnitario * Quantidade);
+		} else if (tipoDesconto != TipoDesconto.PROMOCAO) {
+			Desconto = 0.2;
+			PrecoFinal = Desconto * PrecoUnitario * Quantidade;
+		} else if (tipoDesconto != TipoDesconto.QUANTIDADE) {
+			Desconto = 0.1;
+			PrecoFinal = Desconto * PrecoUnitario * Quantidade;
+		}
+		return Desconto;
+	}
+}

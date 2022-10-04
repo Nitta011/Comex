@@ -3,7 +3,7 @@ package br.com.comex.modelo;
 import br.com.comex.enums.estados;
 
 public class Cliente {
-	private static long ProximoID =1;
+	private static long ProximoID = 1;
 	private long ID;
 	private String Nome;
 	private String CPF;
@@ -15,30 +15,30 @@ public class Cliente {
 	private String Cidade;
 	private estados Estado;
 
-	public Cliente(long ID, String Nome, String CPF, String Telefone, String Rua, String Numero, String Complemento, String Bairro,
-			String Cidade, estados Estado) {
-		
+	public Cliente(long ID, String Nome, String CPF, String Telefone, String Rua, String Numero, String Complemento,
+			String Bairro, String Cidade, estados Estado) {
+
 		if (ID != ProximoID) {
 			String msg = "ID inválido!  " + ID;
 			throw new IllegalArgumentException(msg);
 		}
-		if(Nome.length() <= 5) {
+		if (Nome.length() <= 5) {
 			String msg = "Nome Inválido! " + Nome;
 			throw new IllegalArgumentException(msg);
 		}
-		if(CPF.length() <=11 && CPF.length() >=14) {
+		if (CPF.length() <= 11 && CPF.length() >= 14) {
 			String msg = "CPF Inválido! " + CPF;
 			throw new IllegalArgumentException(msg);
 		}
-		if (Telefone.length()<=11 && Telefone.length() >=16) {
+		if (Telefone.length() <= 11 && Telefone.length() >= 16) {
 			String msg = "Telefone Inválido! " + Telefone;
 			throw new IllegalArgumentException(msg);
 		}
-		if(Rua.length()<= 5) {
+		if (Rua.length() <= 5) {
 			String msg = "Nome da rua Inválido! " + Rua;
 			throw new IllegalArgumentException(msg);
 		}
-		if(Numero.length() < 2) {
+		if (Numero.length() < 2) {
 			String msg = "Número Inválido! " + Numero;
 			throw new IllegalArgumentException(msg);
 		}
@@ -63,25 +63,25 @@ public class Cliente {
 		ProximoID++;
 	}
 
-	public Cliente(String Nome, String CPF, String Telefone, String Rua, String Numero, String Complemento, String Bairro,
-	String Cidade, estados Estado) {
-		if(Nome.length() <= 5) {
+	public Cliente(String Nome, String CPF, String Telefone, String Rua, String Numero, String Complemento,
+			String Bairro, String Cidade, estados Estado) {
+		if (Nome.length() <= 5) {
 			String msg = "Nome Inválido! " + Nome;
 			throw new IllegalArgumentException(msg);
 		}
-		if(CPF.length() <=11 && CPF.length() >=14) {
+		if (CPF.length() <= 11 && CPF.length() >= 14) {
 			String msg = "CPF Inválido! " + CPF;
 			throw new IllegalArgumentException(msg);
 		}
-		if (Telefone.length()<=11 && Telefone.length() >=16) {
+		if (Telefone.length() <= 11 && Telefone.length() >= 16) {
 			String msg = "Telefone Inválido! " + Telefone;
 			throw new IllegalArgumentException(msg);
 		}
-		if(Rua.length()<= 5) {
+		if (Rua.length() <= 5) {
 			String msg = "Nome da rua Inválido! " + Rua;
 			throw new IllegalArgumentException(msg);
 		}
-		if(Numero.length() < 2) {
+		if (Numero.length() < 2) {
 			String msg = "Número Inválido! " + Numero;
 			throw new IllegalArgumentException(msg);
 		}
@@ -105,7 +105,7 @@ public class Cliente {
 		this.Estado = Estado;
 		ProximoID++;
 	}
-	
+
 	public long getID() {
 		return ID;
 	}
@@ -144,5 +144,11 @@ public class Cliente {
 
 	public estados getEstado() {
 		return Estado;
+	}
+
+	@Override
+	public String toString() {
+		return "O(A) cliente " + getNome() + ", portador do CPF: " + getCPF() + ", reside em " + getCidade()
+				+ ". Seu ID é: " + getID();
 	}
 }

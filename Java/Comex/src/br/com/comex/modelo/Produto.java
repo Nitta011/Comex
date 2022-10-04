@@ -1,5 +1,6 @@
 package br.com.comex.modelo;
 
+import br.com.comex.exception.ComexException;
 
 public class Produto {
 	private long ID;
@@ -96,5 +97,10 @@ public class Produto {
 
 	public static void setCategoria(Categoria newCategoria) {
 		Categoria = newCategoria;
+	}
+	
+	public String toString() {
+		return "Produto: " + getNome() + ", está custando " + getPrecoUnitario() + ", temos " + getQuantidadeEstoque()
+				+ " unidade(s) em estoque" + " e o imposto sobre o produto é de " + CalculaImposto();
 	}
 }

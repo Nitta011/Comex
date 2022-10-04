@@ -17,5 +17,9 @@ public class ProdutoIsento extends Produto {
 		TotalEstoque = (ProdutoIsento.getPrecoUnitario() * ProdutoIsento.getQuantidadeEstoque());
 		return TotalEstoque;
 	}
+	public String toString() {
+		return "Produto: " + getNome() + ", está custando " + getPrecoUnitario() + ", temos " + getQuantidadeEstoque()
+				+ " unidade(s) em estoque" + " e o imposto sobre o produto é de " + ImpostoIsento();
+	}
 
 }

@@ -1,0 +1,45 @@
+package br.com.comex.modelo;
+
+import br.com.comex.enums.TipoDesconto;
+import br.com.comex.enums.estados;
+
+public class CalculaValorTotal {
+	private TipoDesconto tipoDesconto;
+	private double Desconto;
+	private double PrecoUnitario;
+	private double PrecoFinal;
+	private int Quantidade;
+	
+
+	public double CalculaTotal(double Desconto, double PrecoUnitario, int Quantidade ) {
+		Categoria categoria1 = new Categoria("INFORMÁTICA");
+		Categoria categoria2 = new Categoria("MÓVEIS");
+		Categoria categoria3 = new Categoria("LIVROS");
+
+		ProdutoIsento Produto2 = new ProdutoIsento(2, "Clean Architecture", " ", 102.9, 8, categoria2);
+		Produto Produto1 = new Produto(1, "Notebook Samsung", " ", 3523.0, 20, categoria1);
+		Produto Produto3 = new Produto(3, "Monitor Dell 27 ", " ", 1889.0, 100, categoria1);
+
+		Cliente cliente4 = new Cliente("Luccas", "109212361728", "44984223978", "Rua Alagoas", "5540",
+				"Casa Branca", "Zona 1", "Fernandópolis", estados.SP);
+		Cliente cliente5 = new Cliente("Gabriel", "4589654896524", "14521256789", "Rua Caxias", "1231",
+				"Casa Amarela", "Centro", "Rio de Janeiro", estados.RJ);
+		Cliente cliente6 = new Cliente("Luanna", "417896325414", "456321789631", "Rua Maringa", "5540",
+				"Casa Cinza", "Zona 7", "Londrina", estados.PR);
+		Pedido pedido1 = new Pedido("24/01/2022", cliente5);
+		ItemPedido Itempedido1 = new ItemPedido(3523, 12, cliente4, Produto1, pedido1, TipoDesconto.QUANTIDADE);
+		
+		
+		if(tipoDesconto == TipoDesconto.NENHUM) {
+			Desconto = 0.0;
+			PrecoFinal = (Desconto * PrecoUnitario * Quantidade);
+		} else if (tipoDesconto != TipoDesconto.PROMOCAO) {
+			Desconto = 0.2;
+			PrecoFinal = Desconto * PrecoUnitario * Quantidade;
+		} else if (tipoDesconto != TipoDesconto.QUANTIDADE) {
+			Desconto = 0.1;
+			PrecoFinal = Desconto * PrecoUnitario * Quantidade;
+		}
+		return PrecoFinal;
+	}
+}

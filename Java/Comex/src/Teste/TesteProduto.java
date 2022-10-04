@@ -13,21 +13,21 @@ public class TesteProduto {
 
 	public TesteProduto(int ID, String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque,
 			TesteCategoria Categoria) {
-		if (ID != ProximoID ) {
+		if (ID != ProximoID) {
 			String msg = "ID inválido!  " + ID;
 			throw new IllegalArgumentException(msg);
 		}
-			
+
 		int QtdCaracteresNome = Nome.length();
 		if (QtdCaracteresNome < 6) {
 			String msg = "Nome inválido!  " + Nome;
 			throw new IllegalArgumentException(msg);
 		}
-		if(PrecoUnitario <=0){
+		if (PrecoUnitario <= 0) {
 			String msg = "Valor inválido!  " + Nome;
 			throw new IllegalArgumentException(msg);
 		}
-		if(QuantidadeEstoque <=0){
+		if (QuantidadeEstoque <= 0) {
 			String msg = "Estoque inválido!  " + Nome;
 			throw new IllegalArgumentException(msg);
 		}
@@ -40,7 +40,7 @@ public class TesteProduto {
 		this.TotalEstoque = TotalEstoque;
 		ProximoID++;
 	}
-	
+
 	public TesteProduto(String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque,
 			TesteCategoria Categoria) {
 
@@ -73,48 +73,30 @@ public class TesteProduto {
 		return ID;
 	}
 
-	public void setID(int newID) {
-		this.ID = newID;
-	}
-
 	public String getNome() {
 		return Nome;
 	}
 
-	public void setNome(String newNome) {
-		this.Nome = newNome;
-	}
-
-	public static String getDescricao() {
+	public String getDescricao() {
 		return Descricao;
-	}
-
-	public void setDescricao(String newDescricao) {
-		this.Descricao = newDescricao;
 	}
 
 	public static double getPrecoUnitario() {
 		return PrecoUnitario;
 	}
 
-	public void setPrecoUnitario(double newPrecoUnitario) {
-		this.PrecoUnitario = newPrecoUnitario;
-	}
-
 	public static int getQuantidadeEstoque() {
 		return QuantidadeEstoque;
-	}
-
-	public void setQuantidadeEstoque(int newQuantidadeEstoque) {
-		this.QuantidadeEstoque = newQuantidadeEstoque;
 	}
 
 	public TesteCategoria getCategoria() {
 		return Categoria;
 	}
 
-	public void setCategoria(TesteCategoria newCategoria) {
-		this.Categoria = newCategoria;
+	@Override
+	public String toString() {
+		return "Produto: " + getNome() + ", está custando " + getPrecoUnitario() + ", e temos " + getQuantidadeEstoque()
+				+ " unidade(s) em estoque";
 	}
 
 }
