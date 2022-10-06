@@ -1,0 +1,28 @@
+package br.com.comex.modelo;
+
+import java.io.FileNotFoundException;
+import java.util.List;
+
+import br.com.comex.csv.LeitorPedidosCsv;
+import br.com.comex.csv.PedidosCsv;
+
+public class TotalProdutosVendidos {
+	public static void main(String[] args) throws FileNotFoundException {
+
+		LeitorPedidosCsv leitorPedidosCsv = new LeitorPedidosCsv();
+		List<PedidosCsv> QtdProdutos = leitorPedidosCsv.lerPedidosCsv();
+
+		// transformando a quantidade de String para int
+
+		int QtdProdutos = Pedidos.size();
+		int numeroConvertido = Integer.parseInt(quantidade);
+		int i;
+		int QtdTotalProdutos = 0;
+		for (i = 0; i < 16; i++) {
+			QtdTotalProdutos += numeroConvertido;
+			i++;
+		}
+		System.out.print(numeroConvertido + " ");
+	}
+
+}

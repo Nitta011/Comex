@@ -1,0 +1,13 @@
+package br.com.comex.csv;
+
+import java.io.IOError;
+import java.io.IOException;
+import java.io.PrintStream;
+
+public class LeitorPedidosCsv {
+
+	public static void main(String[] args) throws IOException {
+		PrintStream ps = new PrintStream("pedidos.csv");
+	}
+	
+}

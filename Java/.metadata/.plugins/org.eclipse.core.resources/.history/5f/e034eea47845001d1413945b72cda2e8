@@ -1,0 +1,23 @@
+package br.com.comex.csv;
+
+import java.io.File;
+import java.util.Scanner;
+
+public class LeitorPedidosCsv {
+
+	public static void main(String[] args) throws Exception{
+	
+		Scanner scanner = new Scanner(new File("pedidos.csv"));
+		String linha = scanner.nextLine();
+		System.out.println(linha);
+		
+		
+//		PrintStream ps = new PrintStream("pedidos.csv");
+//		ps.println();
+//		ps.close();
+		
+		
+		
+	}
+	
+}

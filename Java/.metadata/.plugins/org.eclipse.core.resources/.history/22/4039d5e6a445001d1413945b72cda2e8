@@ -1,0 +1,11 @@
+package br.com.comex.main;
+
+import br.com.comex.modelo.TotalProdutosVendidos;
+
+public class MainTotalProdutosVendidos {
+	public static void main(String[] args) {
+		
+		
+		TotalProdutosVendidos totalProdutos = new TotalProdutosVendidos();
+	}
+}
