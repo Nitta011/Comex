@@ -1,0 +1,21 @@
+package br.com.comex.modelo;
+
+import java.io.FileNotFoundException;
+import br.com.comex.csv.PedidosCsv;
+import java.util.List;
+
+import br.com.comex.csv.LeitorPedidosCsv;
+import br.com.comex.csv.PedidosCsv;
+
+public class TotalProdutosVendidos {
+
+	public double calcularProdutosVendidos(List<PedidosCsv> pedido) {		
+		int QtdTotalProdutos = 0;
+		for (PedidosCsv Pedidos : pedido) {
+			QtdTotalProdutos = QtdTotalProdutos + Integer.parseInt(Pedidos.getCliente());
+		}
+		
+		return QtdTotalProdutos;
+	}
+	
+}

@@ -27,12 +27,9 @@ public class LeitorPedidosCsv {
 			String quantidade = valores[3];
 			String data = valores[4];
 			String cliente = valores[5];
-			PedidosCsv pedidos = new PedidosCsv(categoria, produto, quantidade, preco, data, cliente);
+			PedidosCsv pedidos = new PedidosCsv(categoria, produto, preco, quantidade, data, cliente);
 			Pedidos.add(pedidos);
 			
-			String ValorFormatado = String.format("R$ %s",preco);
-			System.out.println(ValorFormatado);
-		
 		}
 		
 		scanner.close();

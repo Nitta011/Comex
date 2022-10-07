@@ -5,35 +5,26 @@ public class PedidosCsv {
     private String categoria;
     private String produto;
     private String cliente;
-
     private String preco;
     private String quantidade;
-
     private String data;
 
-    public PedidosCsv(String categoria, String produto, String cliente, String preco, String quantidade, String data) {
+    public PedidosCsv(String categoria, String produto, String preco, String quantidade, String data,String cliente) {
         this.categoria = categoria;
         this.produto = produto;
-        this.cliente = cliente;
         this.preco = preco;
         this.quantidade = quantidade;
-        this.data = data;
+        this.data = data; 
+        this.cliente = cliente;
     }
-
-    public PedidosCsv(String quantidade) {
-        this.quantidade = quantidade;
-    }
-
+    
+    
 	public String getCategoria() {
         return categoria;
     }
 
     public String getProduto() {
         return produto;
-    }
-
-    public String getCliente() {
-        return cliente;
     }
 
     public String getPreco() {
@@ -48,17 +39,21 @@ public class PedidosCsv {
         return data;
     }
     
-  
+    public String getCliente() {
+        return cliente;
+    }
+    
     @Override
     public String toString() {
+		String ValorFormatado = String.format(" R$%s",preco);
         return "Pedido{" +
                 "categoria='" + categoria + '\'' +
                 ", produto='" + produto + '\'' +
                 ", cliente='" + cliente + '\'' +
-                ", preco=" + preco +
+                ", preco=" + ValorFormatado +
                 ", quantidade=" + quantidade +
                 ", data=" + data +
                 '}';
     }
-
+    
 }

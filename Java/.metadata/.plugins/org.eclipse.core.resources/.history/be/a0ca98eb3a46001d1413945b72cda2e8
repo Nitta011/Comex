@@ -1,0 +1,18 @@
+package br.com.comex.csv;
+
+import java.util.List;
+
+public class MontanteTotalVendas {
+	public double calcularTotalPreco(List<PedidosCsv> pedido) {		
+		Double precoTotal = 0.0;
+		int quantidadeTotal = 0;
+		
+		for (PedidosCsv Pedidos : pedido) {
+			precoTotal = precoTotal + Double.parseDouble(Pedidos.getPreco());
+			quantidadeTotal = quantidadeTotal + Integer.parseInt(Pedidos.getQuantidade());
+			
+		}
+		
+		return precoTotal;
+	}
+}

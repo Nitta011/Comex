@@ -35,6 +35,4 @@ public class MainCliente {
 				"Maringá", estados.PR);
 		System.out.println(cliente3.toString());
 	}
-	
-
 }

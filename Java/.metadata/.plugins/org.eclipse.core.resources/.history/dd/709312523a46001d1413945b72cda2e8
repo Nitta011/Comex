@@ -1,0 +1,14 @@
+package br.com.comex.csv;
+
+import java.util.List;
+
+public class MontanteTotalVendas {
+	public double calcularProdutosVendidos(List<PedidosCsv> pedido) {		
+		int QtdTotalProdutos = 0;
+		for (PedidosCsv Pedidos : pedido) {
+			QtdTotalProdutos = QtdTotalProdutos + Integer.parseInt(Pedidos.getQuantidade());
+		}
+		
+		return QtdTotalProdutos;
+	}
+}

@@ -1,0 +1,14 @@
+package br.com.comex.csv;
+
+import java.util.Comparator;
+
+public class PedidoMaisBaratoEMaisCaro implements Comparator<PedidosCsv> {
+
+	@Override
+	public int compare(PedidosCsv p1, PedidosCsv p2) {
+		
+		return 0;
+	}
+	
+	
+}
