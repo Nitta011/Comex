@@ -8,11 +8,14 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="protected"/>
 			<item value="private"/>
+			<item value="ptivate"/>
+			<item value="this."/>
+			<item value="protected"/>
 			<item value="MainProduto"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 			<item value="private"/>
 			<item value="protected"/>
 		</list>

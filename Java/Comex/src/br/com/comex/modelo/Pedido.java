@@ -45,5 +45,4 @@ public class Pedido {
 	public String toString() {
 		return "O(A) Cliente " + getCliente() + " realizou um pedido, cujo ID é " + getID() + ", na data: " + getData();
 	}
-
 }
