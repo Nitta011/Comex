@@ -13,5 +13,8 @@ public class MainAtualizacaoCategoria {
 		
 		Statement stm = connection.createStatement();
 		stm.execute("UPDATE COMEX.CATEGORIA SET NOME = 'LIVROS TÉCNICOS' WHERE NOME = 'LIVROS'");
+	
+		stm.close();
+		connection.close();
 	}
 }

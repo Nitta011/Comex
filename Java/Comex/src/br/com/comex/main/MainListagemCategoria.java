@@ -22,6 +22,9 @@ public class MainListagemCategoria {
 			String nome = rst.getString("NOME");
 			String statusCategoria = rst.getString("STATUS");
 			System.out.println(ID + ", " + nome + "," + statusCategoria);
+
+			stm.close();
+			connection.close();
 		}
 	}
 }

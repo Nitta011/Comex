@@ -19,5 +19,9 @@ public class MainInsercaoCategoria {
 		stm.setString(1, nome);
 		stm.setString(2, statusCategoria);
 		stm.execute();
+		
+
+		stm.close();
+		connection.close();
 	}
 }
