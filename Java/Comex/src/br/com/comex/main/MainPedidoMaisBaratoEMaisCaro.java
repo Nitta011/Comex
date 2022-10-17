@@ -4,14 +4,14 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 import br.com.comex.csv.LeitorPedidosCsv;
-import br.com.comex.csv.PedidoMaisBaratoEMaisCaro;
-import br.com.comex.csv.PedidosCsv;
+import br.com.comex.csv.PedidoCsv;
+import br.com.comex.modelo.PedidoMaisBaratoEMaisCaro;
 
 public class MainPedidoMaisBaratoEMaisCaro {
 	public static void main(String[] args) throws FileNotFoundException {
 
 		LeitorPedidosCsv leitorPedidosCsv = new LeitorPedidosCsv();
-		List<PedidosCsv> pedidosCsv = leitorPedidosCsv.lerPedidosCsv();
+		List<PedidoCsv> pedidosCsv = leitorPedidosCsv.lerPedidosCsv();
 
 		PedidoMaisBaratoEMaisCaro precoPedido = new PedidoMaisBaratoEMaisCaro();
 		pedidosCsv.sort(precoPedido);

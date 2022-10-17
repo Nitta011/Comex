@@ -8,6 +8,10 @@ public class Categoria {
 	private String Nome;
 	private StatusCategoria status = StatusCategoria.ATIVA;
 	
+	public Categoria(Long ID) {
+		this.ID = ID; 
+	}
+	
 	public Categoria(long ID, String Nome, StatusCategoria status) {
 
 			if (ID != ProximoID) {
@@ -43,8 +47,8 @@ public class Categoria {
 		return ID;
 	}
 
-	public void setID(long newID) {
-			this.ID = newID;
+	public void setID(long ID) {
+			this.ID = ID;
 	}
 
 	public String getNome() {

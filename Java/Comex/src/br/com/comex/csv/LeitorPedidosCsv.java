@@ -11,8 +11,8 @@ import java.util.Scanner;
 
 public class LeitorPedidosCsv {
 
-	public List<PedidosCsv> lerPedidosCsv() throws FileNotFoundException {
-		List<PedidosCsv> Pedidos = new ArrayList<PedidosCsv>();
+	public List<PedidoCsv> lerPedidosCsv() throws FileNotFoundException {
+		List<PedidoCsv> Pedidos = new ArrayList<PedidoCsv>();
 
 		InputStream inputStream = new FileInputStream("pedidos.csv");
 		Scanner scanner = new Scanner(inputStream);
@@ -27,7 +27,7 @@ public class LeitorPedidosCsv {
 			String quantidade = valores[3];
 			String data = valores[4];
 			String cliente = valores[5];
-			PedidosCsv pedidos = new PedidosCsv(categoria, produto, preco, quantidade, data, cliente);
+			PedidoCsv pedidos = new PedidoCsv(categoria, produto, preco, quantidade, data, cliente);
 			Pedidos.add(pedidos);
 			
 		}

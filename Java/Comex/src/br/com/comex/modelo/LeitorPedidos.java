@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.comex.csv.PedidosCsv;
+import br.com.comex.csv.PedidoCsv;
 
 public class LeitorPedidos {
 	public List<Pedido> lerPedidos() throws FileNotFoundException {

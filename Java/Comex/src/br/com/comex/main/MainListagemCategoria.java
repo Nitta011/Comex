@@ -15,16 +15,15 @@ public class MainListagemCategoria {
 		Connection connection = ConnectionFactory.recuperarConexao();
 		
 		Statement stm = connection.createStatement();
-		stm.execute("SELECT ID,NOME,STATUS FROM COMEX.CATEGORIA");
+		stm.execute("SELECT * FROM COMEX.CATEGORIA");
 		ResultSet rst = stm.getResultSet();
 		while(rst.next()) {
-			Integer ID = rst.getInt("ID");
+			Long ID = rst.getLong("ID");
 			String nome = rst.getString("NOME");
 			String statusCategoria = rst.getString("STATUS");
-			System.out.println(ID + ", " + nome + "," + statusCategoria);
-
-			stm.close();
-			connection.close();
+			System.out.println(ID + ", " + nome + ", " + statusCategoria);
 		}
+		stm.close();
+		connection.close();
 	}
 }

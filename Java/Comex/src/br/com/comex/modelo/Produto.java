@@ -12,6 +12,14 @@ public class Produto {
 	static double Imposto;
 	static double TotalEstoque;
 
+	
+	public Produto(String nome, String descricao, double PrecoUnitario, int QuantidadeEstoque, Categoria categoria) {
+		Nome = nome;
+		Descricao = descricao;
+		this.PrecoUnitario = PrecoUnitario;
+		this.QuantidadeEstoque = QuantidadeEstoque;
+		this.Categoria = categoria;
+	}
 
 	public Produto(long ID, String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque,
 			Categoria Categoria) {
@@ -55,7 +63,7 @@ public class Produto {
 		return ID;
 	}
 
-	public void setID(int newID) {
+	public void setID(long newID) {
 		ID = newID;
 	}
 
@@ -91,11 +99,10 @@ public class Produto {
 		QuantidadeEstoque = newQuantidadeEstoque;
 	}
 
-	public static Categoria getCategoria() {
-		return Categoria;
+	public static long getCategoria() {
+		return Categoria.getID();
 	}
-
-	public static void setCategoria(Categoria newCategoria) {
+	public void setCategoria(Categoria newCategoria) {
 		Categoria = newCategoria;
 	}
 	
