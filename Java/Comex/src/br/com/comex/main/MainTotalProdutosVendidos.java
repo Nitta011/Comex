@@ -7,12 +7,12 @@ import br.com.comex.modelo.TotalProdutosVendidos;
 
 import java.util.List;
 
-import br.com.comex.csv.LeitorPedidosCsv;
+import br.com.comex.csv.LeitorPedidoCsv;
 import br.com.comex.csv.PedidoCsv;
 
 public class MainTotalProdutosVendidos {
 	public static void main(String[] args)throws FileNotFoundException {
-		LeitorPedidosCsv leitorPedidosCsv = new LeitorPedidosCsv();
+		LeitorPedidoCsv leitorPedidosCsv = new LeitorPedidoCsv();
 		List<PedidoCsv> pedidosCsv = leitorPedidosCsv.lerPedidosCsv();
 		
 		TotalProdutosVendidos totalProdutos = new TotalProdutosVendidos();

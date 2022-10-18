@@ -8,5 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="libs/Comex.jar"/>
 	<classpathentry kind="lib" path="C:/Users/gabriel.nitta/Desktop/Comex/Java/Comex/ojdbc8-21.7.0.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
