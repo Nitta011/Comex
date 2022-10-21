@@ -1,73 +1,87 @@
 package br.com.comex.modelo;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 import br.com.comex.enums.StatusCategoria;
 
+@XmlRootElement
 public class Categoria {
-	private static long ProximoID =1;
+	private long ProximoID =1;
 	private long ID;
-	private String Nome;
+	private String nome;
 	private StatusCategoria status = StatusCategoria.ATIVA;
 	
 	public Categoria(Long ID) {
 		this.ID = ID; 
 	}
 	
-	public Categoria(long ID, String Nome, StatusCategoria status) {
+	public Categoria() {
+		
+	}
+
+	
+	public Categoria(String nome, StatusCategoria status) {
+		this.nome = nome;
+	}
+	
+	public Categoria(long ID, String nome, StatusCategoria status) {
 
 			if (ID != ProximoID) {
 				String msg = "ID inválido!  " + ID;
 				throw new IllegalArgumentException(msg);
 			}
-			int QtdCaracteresNome = Nome.length();
+			int QtdCaracteresNome = nome.length();
 			if (QtdCaracteresNome < 4) {
-				String msg = Nome + " Nome inválido";
+				String msg = nome + " Nome inválido";
 				throw new IllegalArgumentException(msg);
 			}
 			this.ID = ID;
-			this.Nome = Nome;
+			this.nome = nome;
 			this.status = StatusCategoria.ATIVA;
 			ProximoID++;
 		}	
 	
-	public Categoria(String Nome) {
-		int QtdCaracteresNome = Nome.length();
+	public Categoria(String nome) {
+		int QtdCaracteresNome = nome.length();
 		if (QtdCaracteresNome < 4) {
-			String msg = Nome + " Nome inválido!  " ;
+			String msg = nome + " Nome inválido!  " ;
 			throw new IllegalArgumentException(msg);
 		}
 		this.ID = ProximoID;
-		this.Nome = Nome;
+		this.nome = nome;
 		this.status = StatusCategoria.ATIVA;
 		ProximoID++;
 		
 	}
 		 
-
 	public long getID() {
 		return ID;
 	}
 
-	public void setID(long ID) {
-			this.ID = ID;
+	public void setID(long iD) {
+		ID = iD;
 	}
 
 	public String getNome() {
-		return Nome;
+		return nome;
 	}
 
-	public void setNome(String newNome) {
-			this.Nome = newNome;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public StatusCategoria getStatus() {
 		return status;
 	}
 
-	public void setStatus(StatusCategoria newstatus) {
-		this.status = newstatus;
+	public void setStatus(StatusCategoria status) {
+		this.status = status;
 	}
-	
+
+	@Override
 	public String toString() {
-		return "Categoria " + getNome() + "( " + getID() + " - " +getStatus() + ")";
+		return "Categoria [ID=" + ID + ", nome=" + nome + ", status=" + status + "]";
 	}
+
+	
 }

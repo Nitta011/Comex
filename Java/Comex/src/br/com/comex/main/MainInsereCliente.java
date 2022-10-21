@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import br.com.comex.conexao.ConnectionFactory;
 import br.com.comex.enums.estados;
+import br.com.comex.modelo.Cliente;
 
 public class MainInsereCliente {
 	public static void main(String[] args) throws SQLException {
@@ -17,12 +18,12 @@ public class MainInsereCliente {
 		String Complemento = " ";
 		String Bairro = " ";
 		String Cidade = " ";
-		// estados Estado = ?;
 
+		
 		ConnectionFactory conexao = new ConnectionFactory();
 		Connection connection = ConnectionFactory.recuperarConexao();
 		PreparedStatement stm = connection.prepareStatement(
-				"INSERT INTO COMEX.CLIENTE (NOME,CPF,TELEFONE,RUA,NUMERO,COMPLEMENTO,BAIRRO,CIDADE) VALUES (?,?,?,?,?,?,?,?)");
+				"INSERT INTO COMEX.CLIENTE (NOME,CPF,TELEFONE,RUA,NUMERO,COMPLEMENTO,BAIRRO,CIDADE,ESTADO) VALUES (?,?,?,?,?,?,?,?,?)");
 
 		stm.setString(1,nome);
 		stm.setString(2, CPF);

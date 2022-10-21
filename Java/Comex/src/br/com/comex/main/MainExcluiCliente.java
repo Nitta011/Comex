@@ -12,7 +12,7 @@ public class MainExcluiCliente {
 		Connection connection = ConnectionFactory.recuperarConexao();
 		
 		Statement stm = connection.createStatement();
-		stm.execute("DELETE FROM COMEX.CLIENTE WHERE ID = ?");
+		stm.execute("DELETE FROM COMEX.CLIENTE WHERE ID = 11");
 		
 		Integer linhasModificadas = stm.getUpdateCount();
 		System.out.println("Quantidade de linhas modificadas: " + linhasModificadas);

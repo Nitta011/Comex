@@ -45,10 +45,12 @@ public class ProdutoDAO {
 		String sql = "DELETE FROM COMEX.PRODUTO WHERE ID = ?";
 		PreparedStatement ps = connection.prepareStatement(sql);
 		ps.setLong(1, ID);
+		ps.execute();
+		ps.close();
 	}
 
 	public void alterar(Produto produto) throws SQLException {
-		String sql = "UPDATE COMEX.PRODUTO" + "SET NOME = ?," + "DESCRICAO = ?," + "PRECOUNITARIO = ?,"
+		String sql = "UPDATE COMEX.PRODUTO" + "SET ID=?," +  " NOME = ?," + "DESCRICAO = ?," + "PRECOUNITARIO = ?,"
 				+ "QUANTIDADE_ESTOQUE = ?," + "CATEGORIA_ID = ?," + "WHERE ID = ?";
 		
 		PreparedStatement ps = connection.prepareStatement(sql);
@@ -100,8 +102,7 @@ public class ProdutoDAO {
 				rst.getString("descricao"),
 				rst.getDouble("preco_unitario"),
 				rst.getInt("quantidade_estoque"),
-				new Categoria(rst.getLong("categoria_id"))				
-				);
+				new Categoria(rst.getLong("categoria_id")));
 		produto.setID(rst.getLong("id"));
 		return produto;
 	}

@@ -1,29 +1,23 @@
 package br.com.comex.main;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.List;
-
 import br.com.comex.conexao.ConnectionFactory;
-import br.com.comex.enums.StatusCategoria;
+import br.com.comex.modelo.Categoria;
+import dao.CategoriaDAO;
 
 public class MainListagemCategoria {
 	public static void main(String[] args) throws SQLException {
-		ConnectionFactory connectionFactory = new ConnectionFactory();
-		Connection connection = ConnectionFactory.recuperarConexao();
-		
-		Statement stm = connection.createStatement();
-		stm.execute("SELECT * FROM COMEX.CATEGORIA");
-		ResultSet rst = stm.getResultSet();
-		while(rst.next()) {
-			Long ID = rst.getLong("ID");
-			String nome = rst.getString("NOME");
-			String statusCategoria = rst.getString("STATUS");
-			System.out.println(ID + ", " + nome + ", " + statusCategoria);
+
+		Connection conexao = new ConnectionFactory().recuperarConexao();
+		CategoriaDAO categoriaDao = new CategoriaDAO(conexao);
+		List<Categoria> listaCategoria = categoriaDao.listar();
+		System.out.println("Lista de Categorias: ");
+		for (Categoria categoria : listaCategoria) {
+			System.out.println(" ");
+			System.out.println(categoria);
 		}
-		stm.close();
-		connection.close();
+		conexao.close();
 	}
 }

@@ -2,20 +2,21 @@ package br.com.comex.modelo;
 
 public class ProdutoIsento extends Produto {
 	
-	public ProdutoIsento(int ID, String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque,
-			Categoria Categoria) {
-		super(ID, Nome, Descricao, PrecoUnitario, QuantidadeEstoque, Categoria);
+	public ProdutoIsento(int id, String nome, String descricao, double precoUnitario, int quantidadeEstoque,
+			Categoria categoria) {
+		super(id, nome, descricao, precoUnitario, quantidadeEstoque, categoria);
 		
 	}
 
-	public static double ImpostoIsento() {
-		Imposto = 0.0;
-		return Imposto;
+	public double ImpostoIsento() {
+		return 0.0;
 	}
+	
+	Produto produto = new Produto();
 
-	public static double CalculaValorEstoqueIsento() {
-		TotalEstoque = (ProdutoIsento.getPrecoUnitario() * ProdutoIsento.getQuantidadeEstoque());
-		return TotalEstoque;
+	public double CalculaValorEstoqueIsento() {
+		return getPrecoUnitario()*getQuantidadeEstoque();
+		
 	}
 	public String toString() {
 		return "Produto: " + getNome() + ", está custando " + getPrecoUnitario() + ", temos " + getQuantidadeEstoque()

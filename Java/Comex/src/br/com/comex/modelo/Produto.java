@@ -3,107 +3,108 @@ package br.com.comex.modelo;
 import br.com.comex.exception.ComexException;
 
 public class Produto {
-	private long ID;
-	private String Nome;
-	private String Descricao;
-	private static double PrecoUnitario;
-	private static int QuantidadeEstoque;
-	private static Categoria Categoria;
-	static double Imposto;
-	static double TotalEstoque;
+	private long id;
+	private String nome;
+	private String descricao;
+	private double precoUnitario;
+	private int quantidadeEstoque;
+	private Categoria categoria;
 
+	public Produto() {
+		
+	}
 	
-	public Produto(String nome, String descricao, double PrecoUnitario, int QuantidadeEstoque, Categoria categoria) {
-		Nome = nome;
-		Descricao = descricao;
-		this.PrecoUnitario = PrecoUnitario;
-		this.QuantidadeEstoque = QuantidadeEstoque;
-		this.Categoria = categoria;
+	public Produto(String nome, String descricao, double precoUnitario, int quantidadeEstoque,
+			Categoria categoria) {
+		nome = nome;
+		descricao = descricao;
+		this.precoUnitario = precoUnitario;
+		this.quantidadeEstoque = quantidadeEstoque;
+		this.categoria = categoria;
 	}
 
-	public Produto(long ID, String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque,
-			Categoria Categoria) {
-		if (ID <0 ) {
-			String msg = "ID inválido!  " + ID;
+	public Produto(long id, String nome, String descricao, double precoUnitario, int quantidadeEstoque,
+			Categoria categoria) {
+		if (id <0 ) {
+			String msg = "ID inválido!  " + id;
 			throw new IllegalArgumentException(msg);
 		}
 			
-		int QtdCaracteresNome = Nome.length();
-		if (QtdCaracteresNome < 6) {
-			String msg = "Nome inválido!  " + Nome;
+		int qtdCaracteresNome = nome.length();
+		if (qtdCaracteresNome < 6) {
+			String msg = "Nome inválido!  " + nome;
 			throw new IllegalArgumentException(msg);
 		}
-		if(PrecoUnitario <=0){
-			String msg = "Valor inválido!  " + Nome;
+		if(precoUnitario <=0){
+			String msg = "Valor inválido!  " + nome;
 			throw new IllegalArgumentException(msg);
 		}
-		if(QuantidadeEstoque <=0){
-			String msg = "Estoque inválido!  " + Nome;
+		if(quantidadeEstoque <=0){
+			String msg = "Estoque inválido!  " + nome;
 			throw new IllegalArgumentException(msg);
 		}
-		this.ID = ID;
-		this.Nome = Nome;
-		this.Descricao = Descricao;
-		this.PrecoUnitario = PrecoUnitario;
-		this.QuantidadeEstoque = QuantidadeEstoque;
-		this.Categoria = Categoria;
+		this.id = id;
+		this.nome = nome;
+		this.descricao = descricao;
+		this.precoUnitario = precoUnitario;
+		this.quantidadeEstoque = quantidadeEstoque;
+		this.categoria = categoria;
 	}
 	
-	public static double CalculaValorEstoque() {
-		TotalEstoque = (PrecoUnitario * QuantidadeEstoque);
-		return TotalEstoque;
+	public double CalculaValorEstoque() {
+		return precoUnitario * quantidadeEstoque;
+		
 	}
 
-	public static double CalculaImposto() {
-		Imposto = (PrecoUnitario * 0.4);
-		return Imposto;
+	public double CalculaImposto() {
+		return precoUnitario * 0.4;
 	}
 
 	public long getID() {
-		return ID;
+		return id;
 	}
 
 	public void setID(long newID) {
-		ID = newID;
+		id = newID;
 	}
 
 	public String getNome() {
-		return Nome;
+		return nome;
 	}
 
 	public void setNome(String newNome) {
-		Nome = newNome;
+		nome = newNome;
 	}
 
 	public String getDescricao() {
-		return Descricao;
+		return descricao;
 	}
 
 	public void setDescricao(String newDescricao) {
-		Descricao = newDescricao;
+		descricao = newDescricao;
 	}
 
-	public static double getPrecoUnitario() {
-		return PrecoUnitario;
+	public double getPrecoUnitario() {
+		return precoUnitario;
 	}
 
-	public static void setPrecoUnitario(double newPrecoUnitario) {
-		PrecoUnitario = newPrecoUnitario;
+	public void setPrecoUnitario(double newPrecoUnitario) {
+		precoUnitario = newPrecoUnitario;
 	}
 
-	public static int getQuantidadeEstoque() {
-		return QuantidadeEstoque;
+	public int getQuantidadeEstoque() {
+		return quantidadeEstoque;
 	}
 
-	public static void setQuantidadeEstoque(int newQuantidadeEstoque) {
-		QuantidadeEstoque = newQuantidadeEstoque;
+	public void setQuantidadeEstoque(int newQuantidadeEstoque) {
+		quantidadeEstoque = newQuantidadeEstoque;
 	}
 
-	public static long getCategoria() {
-		return Categoria.getID();
+	public long getCategoria() {
+		return categoria.getID();
 	}
 	public void setCategoria(Categoria newCategoria) {
-		Categoria = newCategoria;
+		categoria = newCategoria;
 	}
 	
 	public String toString() {

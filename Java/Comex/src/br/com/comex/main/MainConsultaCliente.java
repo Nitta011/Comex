@@ -1,28 +1,29 @@
 package br.com.comex.main;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.List;
 
 import br.com.comex.conexao.ConnectionFactory;
+import br.com.comex.modelo.Cliente;
+import dao.ClienteDAO;
 
 public class MainConsultaCliente {
+	
 	public static void main(String[] args) throws SQLException {
-		ConnectionFactory connectionFactory = new ConnectionFactory();
-		Connection connection = ConnectionFactory.recuperarConexao();
-		
-		Statement stm = connection.createStatement();
-		stm.execute("SELECT * FROM COMEX.CLIENTE");
-		ResultSet rst = stm.getResultSet();
-		while(rst.next()) {
-			Long ID = rst.getLong("ID");
-			String nome = rst.getString("NOME");
-			String CPF = rst.getString("CPF");
-			System.out.println(ID + ", " + nome + ", portador do CPF" + CPF);
-			
-		}
-		stm.close();
-		connection.close();
-	}
+
+        try {
+            new ConnectionFactory();
+			Connection conn = ConnectionFactory.recuperarConexao();
+            ClienteDAO cliDAO = new ClienteDAO(conn);
+            List<Cliente> cli = cliDAO.listar();
+            for (Cliente cliente : cli) {
+                System.out.println(cliente);
+            }
+            conn.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 }

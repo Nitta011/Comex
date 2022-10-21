@@ -11,19 +11,14 @@ public class MainProduto {
 		try {
 		Categoria categoria1 = new Categoria("INFORMÁTICA");		
 		Categoria categoria2 = new Categoria("MÓVEIS");
-		Categoria categoria3 = new Categoria("LIVROS");
-
-
+		
 		Object Produto1 = new Produto(1, "Notebook Samsung", " ", 3523.0, 20, categoria1);
-		
-		
 
 		System.out.println(Produto1.toString());
 		
 		Object Produto2 = new ProdutoIsento(2, "Clean Architecture", " ", 102.9, 8, categoria2);
 		
 		System.out.println(Produto2.toString());
-		
 
 		Object Produto3 = new Produto(3, "Monitor Dell 27 ", " " , 1889.0, 100, categoria1);
 		System.out.println(Produto3.toString());

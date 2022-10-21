@@ -20,7 +20,6 @@ public class MainInsercaoCategoria {
 		stm.setString(2, statusCategoria);
 		stm.execute();
 		
-
 		stm.close();
 		connection.close();
 	}

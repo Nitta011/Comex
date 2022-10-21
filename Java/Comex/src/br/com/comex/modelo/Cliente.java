@@ -15,6 +15,11 @@ public class Cliente {
 	private String Cidade;
 	private estados Estado;
 
+	
+	public Cliente() {
+		super();
+	}
+	
 	public Cliente(long ID, String Nome, String CPF, String Telefone, String Rua, String Numero, String Complemento,
 			String Bairro, String Cidade, estados Estado) {
 
@@ -106,6 +111,56 @@ public class Cliente {
 		ProximoID++;
 	}
 
+
+	
+
+	public void setID(long iD) {
+		ID = iD;
+	}
+
+	public void setNome(String nome) {
+		Nome = nome;
+	}
+
+	public void setCPF(String cPF) {
+		CPF = cPF;
+	}
+
+	public void setTelefone(String telefone) {
+		Telefone = telefone;
+	}
+
+	public void setRua(String rua) {
+		Rua = rua;
+	}
+
+	public void setNumero(String numero) {
+		Numero = numero;
+	}
+
+	public void setComplemento(String complemento) {
+		Complemento = complemento;
+	}
+
+	public void setBairro(String bairro) {
+		Bairro = bairro;
+	}
+
+	public void setCidade(String cidade) {
+		Cidade = cidade;
+	}
+
+	public void setEstado(estados estado) {
+		Estado = estado;
+	}
+
+	
+	
+	
+	public static long getProximoID() {
+		return ProximoID;
+	}
+
 	public long getID() {
 		return ID;
 	}
@@ -148,7 +203,9 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "O(A) cliente " + getNome() + ", portador do CPF: " + getCPF() + ", reside em " + getCidade()
-				+ ". Seu ID é: " + getID();
+		return "Cliente [ID=" + ID + ", Nome=" + Nome + ", CPF=" + CPF + ", Telefone=" + Telefone + ", Rua=" + Rua
+				+ ", Numero=" + Numero + ", Complemento=" + Complemento + ", Bairro=" + Bairro + ", Cidade=" + Cidade
+				+ ", Estado=" + Estado + "]";
 	}
+
 }
