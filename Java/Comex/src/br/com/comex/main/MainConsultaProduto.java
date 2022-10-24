@@ -13,7 +13,7 @@ public class MainConsultaProduto {
 		Connection conexao = new ConnectionFactory().recuperarConexao();
 		
 		ProdutoDAO produtoDao = new ProdutoDAO(conexao);
-		List<Produto> listaProdutos = produtoDao.listaTodas();
+		List<Produto> listaProdutos = produtoDao.listar();
 		
 		for (Produto produto : listaProdutos) {
 			System.out.println("Lista de produtos: ");

@@ -44,54 +44,54 @@ public class ClienteDAO {
 		pstm.close();
 	}
 
-//	public List<Cliente> listar() throws SQLException {
-//		PreparedStatement stm = connection.prepareStatement("SELECT * FROM COMEX.CLIENTE");
-//
-//		List<Cliente> clientes = new ArrayList<>();
-//		ResultSet rst = stm.executeQuery();
-//
-//		while (rst.next()) {
-//			Cliente cliente = this.populaCliente(rst);
-//			clientes.add(cliente);
-//		}
-//		System.out.println(clientes);
-//		rst.close();
-//		stm.close();
-//		return clientes;
-//	}
 	public List<Cliente> listar() throws SQLException {
-		String sql = "SELECT * FROM comex.cliente";
-		PreparedStatement cp = connection.prepareStatement(sql);
+		PreparedStatement stm = connection.prepareStatement("SELECT * FROM COMEX.CLIENTE");
+
 		List<Cliente> clientes = new ArrayList<>();
-		ResultSet reg = cp.executeQuery();
-		while (reg.next()) {
-			Cliente cli = this.populaCliente(reg);
-			clientes.add(cli);
-			System.out.println(clientes);
+		ResultSet rst = stm.executeQuery();
+
+		while (rst.next()) {
+			Cliente cliente = this.populaCliente(rst);
+			clientes.add(cliente);
 		}
+		System.out.println(clientes);
+		rst.close();
+		stm.close();
 		return clientes;
 	}
-//	private Cliente populaCliente(ResultSet registros) throws SQLException {
-//		Cliente cliente = new Cliente(registros.getString("nome"), registros.getString("CPF"),
-//				registros.getString("telefone"), registros.getString("rua"), registros.getString("numero"),
-//				registros.getString("complemento"), registros.getString("Bairro"), registros.getString("cidade"),
-//				estados.valueOf(registros.getString("uf")));
-//		cliente.setID(registros.getInt("id"));
-//		return cliente;
+//	public List<Cliente> listar() throws SQLException {
+//		String sql = "SELECT * FROM comex.cliente";
+//		PreparedStatement cp = connection.prepareStatement(sql);
+//		List<Cliente> clientes = new ArrayList<>();
+//		ResultSet reg = cp.executeQuery();
+//		while (reg.next()) {
+//			Cliente cli = this.populaCliente(reg);
+//			clientes.add(cli);
+//			System.out.println(clientes);
+//		}
+//		return clientes;
 //	}
+	private Cliente populaCliente(ResultSet registros) throws SQLException {
+		Cliente cliente = new Cliente(registros.getString("nome"), registros.getString("CPF"),
+				registros.getString("telefone"), registros.getString("rua"), registros.getString("numero"),
+				registros.getString("complemento"), registros.getString("Bairro"), registros.getString("cidade"),
+				estados.valueOf(registros.getString("uf")));
+		cliente.setID(registros.getInt("id"));
+		return cliente;
+	}
 	
 	
-	private Cliente populaCliente (final ResultSet res) throws SQLException {
-        Cliente clie = new Cliente(res.getString("nome"),
-                                      res.getString("cpf"),
-                                      res.getString("telefone"),
-                                      res.getString("rua"),
-                                      res.getString("numero"),
-                                      res.getString("complemento"),
-                                      res.getString("bairro"),
-                                      res.getString("cidade"),
-                                      estados.valueOf(res.getString("uf")));
-        clie.setID(res.getLong("id"));
-        return clie;
-    }
+//	private Cliente populaCliente (final ResultSet res) throws SQLException {
+//        Cliente clie = new Cliente(res.getString("nome"),
+//                                      res.getString("cpf"),
+//                                      res.getString("telefone"),
+//                                      res.getString("rua"),
+//                                      res.getString("numero"),
+//                                      res.getString("complemento"),
+//                                      res.getString("bairro"),
+//                                      res.getString("cidade"),
+//                                      estados.valueOf(res.getString("uf")));
+//        clie.setID(res.getLong("id"));
+//        return clie;
+//    }
 }

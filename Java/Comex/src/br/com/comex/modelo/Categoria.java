@@ -22,6 +22,7 @@ public class Categoria {
 	
 	public Categoria(String nome, StatusCategoria status) {
 		this.nome = nome;
+		this.status = status;
 	}
 	
 	public Categoria(long ID, String nome, StatusCategoria status) {

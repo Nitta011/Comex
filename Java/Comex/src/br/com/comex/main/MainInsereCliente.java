@@ -22,17 +22,19 @@ public class MainInsereCliente {
 		
 		ConnectionFactory conexao = new ConnectionFactory();
 		Connection connection = ConnectionFactory.recuperarConexao();
+		Cliente cliente = new Cliente();
 		PreparedStatement stm = connection.prepareStatement(
 				"INSERT INTO COMEX.CLIENTE (NOME,CPF,TELEFONE,RUA,NUMERO,COMPLEMENTO,BAIRRO,CIDADE,ESTADO) VALUES (?,?,?,?,?,?,?,?,?)");
 
-		stm.setString(1,nome);
-		stm.setString(2, CPF);
-		stm.setString(3, Telefone);
-		stm.setString(4, Rua);
-		stm.setString(5, Numero);
-		stm.setString(6, Complemento);
-		stm.setString(7, Bairro);
-		stm.setString(8, Cidade);
+		stm.setString(1,cliente.getNome());
+		stm.setString(2, cliente.getCPF());
+		stm.setString(3, cliente.getTelefone());
+		stm.setString(4,cliente.getRua());
+		stm.setString(5, cliente.getNumero());
+		stm.setString(6, cliente.getComplemento());
+		stm.setString(7, cliente.getBairro());
+		stm.setString(8, cliente.getCidade());
+		stm.setString(9, cliente.getEstado().name());
 		
 		stm.execute();
 		connection.close();

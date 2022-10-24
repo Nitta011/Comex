@@ -64,7 +64,7 @@ public class ProdutoDAO {
 	}
 
 	
-	public List<Produto> listaTodas() throws SQLException {
+	public List<Produto> listar() throws SQLException {
 		PreparedStatement stm = connection.prepareStatement("SELECT * FROM COMEX.PRODUTO");
 		
 		List<Produto> produtos = new ArrayList<>();

@@ -5,11 +5,11 @@
       <xsd:import namespace="http://ws.comex.com.br/" schemaLocation="ComexWS.xsd"/>
     </xsd:schema>
   </types>
-  <message name="ListarCategorias">
-    <part name="parameters" element="tns:ListarCategorias"/>
+  <message name="InserindoCategoria">
+    <part name="parameters" element="tns:InserindoCategoria"/>
   </message>
-  <message name="ListarCategoriasResponse">
-    <part name="parameters" element="tns:ListarCategoriasResponse"/>
+  <message name="InserindoCategoriaResponse">
+    <part name="parameters" element="tns:InserindoCategoriaResponse"/>
   </message>
   <message name="SQLException">
     <part name="fault" element="tns:SQLException"/>
@@ -20,43 +20,54 @@
   <message name="InserindoClienteResponse">
     <part name="parameters" element="tns:InserindoClienteResponse"/>
   </message>
-  <message name="InserindoCategoria">
-    <part name="parameters" element="tns:InserindoCategoria"/>
-  </message>
-  <message name="InserindoCategoriaResponse">
-    <part name="parameters" element="tns:InserindoCategoriaResponse"/>
-  </message>
   <message name="ListarClientes">
     <part name="parameters" element="tns:ListarClientes"/>
   </message>
   <message name="ListarClientesResponse">
     <part name="parameters" element="tns:ListarClientesResponse"/>
   </message>
+  <message name="getProdutos">
+    <part name="parameters" element="tns:getProdutos"/>
+  </message>
+  <message name="getProdutosResponse">
+    <part name="parameters" element="tns:getProdutosResponse"/>
+  </message>
+  <message name="ListarCategorias">
+    <part name="parameters" element="tns:ListarCategorias"/>
+  </message>
+  <message name="ListarCategoriasResponse">
+    <part name="parameters" element="tns:ListarCategoriasResponse"/>
+  </message>
   <portType name="ListaCategoria">
-    <operation name="ListarCategorias">
-      <input wsam:Action="http://ws.comex.com.br/ListaCategoria/ListarCategoriasRequest" message="tns:ListarCategorias"/>
-      <output wsam:Action="http://ws.comex.com.br/ListaCategoria/ListarCategoriasResponse" message="tns:ListarCategoriasResponse"/>
-      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ListaCategoria/ListarCategorias/Fault/SQLException"/>
+    <operation name="InserindoCategoria">
+      <input wsam:Action="http://ws.comex.com.br/ListaCategoria/InserindoCategoriaRequest" message="tns:InserindoCategoria"/>
+      <output wsam:Action="http://ws.comex.com.br/ListaCategoria/InserindoCategoriaResponse" message="tns:InserindoCategoriaResponse"/>
+      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ListaCategoria/InserindoCategoria/Fault/SQLException"/>
     </operation>
     <operation name="InserindoCliente">
       <input wsam:Action="http://ws.comex.com.br/ListaCategoria/InserindoClienteRequest" message="tns:InserindoCliente"/>
       <output wsam:Action="http://ws.comex.com.br/ListaCategoria/InserindoClienteResponse" message="tns:InserindoClienteResponse"/>
       <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ListaCategoria/InserindoCliente/Fault/SQLException"/>
     </operation>
-    <operation name="InserindoCategoria">
-      <input wsam:Action="http://ws.comex.com.br/ListaCategoria/InserindoCategoriaRequest" message="tns:InserindoCategoria"/>
-      <output wsam:Action="http://ws.comex.com.br/ListaCategoria/InserindoCategoriaResponse" message="tns:InserindoCategoriaResponse"/>
-      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ListaCategoria/InserindoCategoria/Fault/SQLException"/>
-    </operation>
     <operation name="ListarClientes">
       <input wsam:Action="http://ws.comex.com.br/ListaCategoria/ListarClientesRequest" message="tns:ListarClientes"/>
       <output wsam:Action="http://ws.comex.com.br/ListaCategoria/ListarClientesResponse" message="tns:ListarClientesResponse"/>
       <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ListaCategoria/ListarClientes/Fault/SQLException"/>
     </operation>
+    <operation name="getProdutos">
+      <input wsam:Action="http://ws.comex.com.br/ListaCategoria/getProdutosRequest" message="tns:getProdutos"/>
+      <output wsam:Action="http://ws.comex.com.br/ListaCategoria/getProdutosResponse" message="tns:getProdutosResponse"/>
+      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ListaCategoria/getProdutos/Fault/SQLException"/>
+    </operation>
+    <operation name="ListarCategorias">
+      <input wsam:Action="http://ws.comex.com.br/ListaCategoria/ListarCategoriasRequest" message="tns:ListarCategorias"/>
+      <output wsam:Action="http://ws.comex.com.br/ListaCategoria/ListarCategoriasResponse" message="tns:ListarCategoriasResponse"/>
+      <fault message="tns:SQLException" name="SQLException" wsam:Action="http://ws.comex.com.br/ListaCategoria/ListarCategorias/Fault/SQLException"/>
+    </operation>
   </portType>
   <binding name="ListaCategoriaPortBinding" type="tns:ListaCategoria">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-    <operation name="ListarCategorias">
+    <operation name="InserindoCategoria">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -80,7 +91,7 @@
         <soap:fault name="SQLException" use="literal"/>
       </fault>
     </operation>
-    <operation name="InserindoCategoria">
+    <operation name="ListarClientes">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>
@@ -92,7 +103,19 @@
         <soap:fault name="SQLException" use="literal"/>
       </fault>
     </operation>
-    <operation name="ListarClientes">
+    <operation name="getProdutos">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="SQLException">
+        <soap:fault name="SQLException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="ListarCategorias">
       <soap:operation soapAction=""/>
       <input>
         <soap:body use="literal"/>

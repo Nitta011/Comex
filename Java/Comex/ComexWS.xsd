@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e.--><xs:schema version="1.0" targetNamespace="http://ws.comex.com.br/" xmlns:tns="http://ws.comex.com.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="InserindoCategoria" type="tns:InserindoCategoria"/>
+  <xs:element name="InserindoCategoriaResponse" type="tns:InserindoCategoriaResponse"/>
+  <xs:element name="InserindoCliente" type="tns:InserindoCliente"/>
+  <xs:element name="InserindoClienteResponse" type="tns:InserindoClienteResponse"/>
+  <xs:element name="ListarCategorias" type="tns:ListarCategorias"/>
+  <xs:element name="ListarCategoriasResponse" type="tns:ListarCategoriasResponse"/>
+  <xs:element name="ListarClientes" type="tns:ListarClientes"/>
+  <xs:element name="ListarClientesResponse" type="tns:ListarClientesResponse"/>
+  <xs:element name="SQLException" type="tns:SQLException"/>
+  <xs:element name="categoria" type="tns:categoria"/>
+  <xs:element name="getProdutos" type="tns:getProdutos"/>
+  <xs:element name="getProdutosResponse" type="tns:getProdutosResponse"/>
+  <xs:complexType name="ListarClientes">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="ListarClientesResponse">
+    <xs:sequence>
+      <xs:element name="Clientes" type="tns:cliente" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cliente">
+    <xs:sequence>
+      <xs:element name="bairro" type="xs:string" minOccurs="0"/>
+      <xs:element name="CPF" type="xs:string" minOccurs="0"/>
+      <xs:element name="cidade" type="xs:string" minOccurs="0"/>
+      <xs:element name="complemento" type="xs:string" minOccurs="0"/>
+      <xs:element name="estado" type="tns:estados" minOccurs="0"/>
+      <xs:element name="ID" type="xs:long"/>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="numero" type="xs:string" minOccurs="0"/>
+      <xs:element name="rua" type="xs:string" minOccurs="0"/>
+      <xs:element name="telefone" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SQLException">
+    <xs:sequence>
+      <xs:element name="SQLState" type="xs:string" minOccurs="0"/>
+      <xs:element name="errorCode" type="xs:int"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
+      <xs:element name="nextException" type="tns:sqlException" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sqlException">
+    <xs:complexContent>
+      <xs:extension base="tns:exception">
+        <xs:sequence>
+          <xs:element name="nextException" type="tns:sqlException" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="exception">
+    <xs:complexContent>
+      <xs:extension base="tns:throwable">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="throwable">
+    <xs:sequence>
+      <xs:element name="stackTrace" type="tns:stackTraceElement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="stackTraceElement" final="extension restriction">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="InserindoCategoria">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:categoria" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="categoria">
+    <xs:sequence>
+      <xs:element name="ID" type="xs:long"/>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="status" type="tns:statusCategoria" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InserindoCategoriaResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="ListarCategorias">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="ListarCategoriasResponse">
+    <xs:sequence>
+      <xs:element name="Categorias" type="tns:categoria" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InserindoCliente">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:cliente" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InserindoClienteResponse">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getProdutos">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getProdutosResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:produto" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="produto">
+    <xs:sequence>
+      <xs:element name="descricao" type="xs:string" minOccurs="0"/>
+      <xs:element name="ID" type="xs:long"/>
+      <xs:element name="nome" type="xs:string" minOccurs="0"/>
+      <xs:element name="precoUnitario" type="xs:double"/>
+      <xs:element name="quantidadeEstoque" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="estados">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AC"/>
+      <xs:enumeration value="AL"/>
+      <xs:enumeration value="AP"/>
+      <xs:enumeration value="AM"/>
+      <xs:enumeration value="BA"/>
+      <xs:enumeration value="CE"/>
+      <xs:enumeration value="DF"/>
+      <xs:enumeration value="ES"/>
+      <xs:enumeration value="GO"/>
+      <xs:enumeration value="MA"/>
+      <xs:enumeration value="MT"/>
+      <xs:enumeration value="MS"/>
+      <xs:enumeration value="MG"/>
+      <xs:enumeration value="PA"/>
+      <xs:enumeration value="PB"/>
+      <xs:enumeration value="PR"/>
+      <xs:enumeration value="PE"/>
+      <xs:enumeration value="PI"/>
+      <xs:enumeration value="RJ"/>
+      <xs:enumeration value="RN"/>
+      <xs:enumeration value="RS"/>
+      <xs:enumeration value="RO"/>
+      <xs:enumeration value="RR"/>
+      <xs:enumeration value="SC"/>
+      <xs:enumeration value="SP"/>
+      <xs:enumeration value="SE"/>
+      <xs:enumeration value="TO"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="statusCategoria">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ATIVA"/>
+      <xs:enumeration value="INATIVA"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -8,10 +8,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+
 import br.com.comex.enums.StatusCategoria;
 import br.com.comex.modelo.Categoria;
 import br.com.comex.modelo.Produto;
-
+@XmlAccessorType(XmlAccessType.FIELD)
 public class CategoriaDAO {
 	private static Connection connection;
 
@@ -20,21 +24,17 @@ public class CategoriaDAO {
 	}
 
 	public static void inserir(Categoria categoria) throws SQLException {
-		String sql = "INSERT INTO COMEX.CATEGORIA (NOME,DESCRICAO,PRECO_UNITARIO,QUANTIDADE_ESTOQUE,CATEGORIA_ID) VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO COMEX.CATEGORIA (NOME, STATUS) VALUES (?,?)";
 
-		String[] colunaParaRetornar = { "id" };
-
-		PreparedStatement pstm = connection.prepareStatement(sql, colunaParaRetornar);
-
+		PreparedStatement pstm = connection.prepareStatement(sql);
 		Statement stm = connection.createStatement();
-		stm.execute("SELECT * FROM COMEX.CATEGORIA");
 		ResultSet rst = stm.getResultSet();
 		while(rst.next()) {
-			Long ID = rst.getLong("ID");
 			String nome = rst.getString("NOME");
 			String statusCategoria = rst.getString("STATUS");
 			System.out.println("ID: , " + nome + ", " + statusCategoria);
 		}
+		pstm.execute(sql);
 		stm.close();
 		connection.close();
 	}
@@ -86,7 +86,7 @@ public class CategoriaDAO {
 //	        return categoria;
 //	    }
 //	 
-	 
+	 @XmlElement(name="categoria")
 	public List<Categoria> listar() throws SQLException {
 		PreparedStatement stm = connection.prepareStatement("SELECT * FROM COMEX.CATEGORIA");
 		
