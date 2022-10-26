@@ -1,0 +1,26 @@
+package br.com.comex.modelo;
+
+public class ProdutoIsento extends Produto {
+	
+	public ProdutoIsento(int ID, String Nome, String Descricao, double PrecoUnitario, int QuantidadeEstoque,
+			Categoria Categoria) {
+		super(ID, Nome, Descricao, PrecoUnitario, QuantidadeEstoque, Categoria);
+		
+	}
+
+	public double ImpostoIsento() {
+		Imposto = 0.0;
+		return Imposto;
+	}
+	Produto produto = new Produto();
+
+	public double CalculaValorEstoqueIsento() {
+		totalEstoque = (produto.getPrecoUnitario() * produto.getQuantidadeEstoque());
+		return totalEstoque;
+	}
+	public String toString() {
+		return "Produto: " + getNome() + ", está custando " + getPrecoUnitario() + ", temos " + getQuantidadeEstoque()
+				+ " unidade(s) em estoque" + " e o imposto sobre o produto é de " + ImpostoIsento();
+	}
+
+}

@@ -1,0 +1,117 @@
+package br.com.comex.modelo;
+
+import br.com.comex.exception.ComexException;
+
+public class Produto {
+	private long id;
+	private String nome;
+	private String descricao;
+	private double precoUnitario;
+	private int quantidadeEstoque;
+	private Categoria categoria;
+	double imposto;
+	double totalEstoque;
+
+	
+	public Produto() {
+		
+	}
+	
+	public Produto(String nome, String descricao, double PrecoUnitario, int QuantidadeEstoque, Categoria categoria) {
+		nome = nome;
+		descricao = descricao;
+		this.precoUnitario = PrecoUnitario;
+		this.quantidadeEstoque = QuantidadeEstoque;
+		this.categoria = categoria;
+	}
+
+	public Produto(long id, String nome, String descricao, double precoUnitario, int quantidadeEstoque,
+			Categoria categoria) {
+		if (id <0 ) {
+			String msg = "ID inválido!  " + id;
+			throw new IllegalArgumentException(msg);
+		}
+			
+		int qtdCaracteresNome = nome.length();
+		if (qtdCaracteresNome < 6) {
+			String msg = "Nome inválido!  " + Nome;
+			throw new IllegalArgumentException(msg);
+		}
+		if(PrecoUnitario <=0){
+			String msg = "Valor inválido!  " + Nome;
+			throw new IllegalArgumentException(msg);
+		}
+		if(QuantidadeEstoque <=0){
+			String msg = "Estoque inválido!  " + Nome;
+			throw new IllegalArgumentException(msg);
+		}
+		this.id = id;
+		this.nome = nome;
+		this.descricao = descricao;
+		this.precoUnitario = precoUnitario;
+		this.quantidadeEstoque = quantidadeEstoque;
+		this.categoria = categoria;
+	}
+	
+	public double CalculaValorEstoque() {
+		totalEstoque = (precoUnitario * quantidadeEstoque);
+		return totalEstoque;
+	}
+
+	public double CalculaImposto() {
+		imposto = (precoUnitario * 0.4);
+		return imposto;
+	}
+
+	public long getID() {
+		return id;
+	}
+
+	public void setID(long newID) {
+		id = newID;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String newNome) {
+		nome = newNome;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String newDescricao) {
+		descricao = newDescricao;
+	}
+
+	public double getPrecoUnitario() {
+		return precoUnitario;
+	}
+
+	public void setPrecoUnitario(double newPrecoUnitario) {
+		precoUnitario = newPrecoUnitario;
+	}
+
+	public int getQuantidadeEstoque() {
+		return quantidadeEstoque;
+	}
+
+	public void setQuantidadeEstoque(int newQuantidadeEstoque) {
+		quantidadeEstoque = newQuantidadeEstoque;
+	}
+
+	public long getCategoria() {
+		return categoria.getID();
+	}
+	public void setCategoria(Categoria newCategoria) {
+		categoria = newCategoria;
+	}
+	
+	public String toString() {
+		return "Produto: " + getNome() + ", está custando " + getPrecoUnitario() + ", temos " + getQuantidadeEstoque()
+				+ " unidade(s) em estoque" + " e o imposto sobre o produto é de " + CalculaImposto();
+	}
+}

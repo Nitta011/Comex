@@ -1,0 +1,67 @@
+package TesteFranca;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import br.com.comex.csv.LeitorPedidosCsv;
+import br.com.comex.csv.PedidosCsv;
+
+public class Devedores {
+		private String nomeCredor;
+		private String nomeDevedor;
+		private String divida;
+		private double saldo;
+	
+		public Devedores() {
+
+			this.nomeCredor = nomeCredor;
+			this.nomeDevedor = nomeDevedor;
+			this.divida = divida;
+		}
+		
+	
+		public Devedores(double[] nomeCredore, double[] nomeDevedore, double[] dividas) {
+			// TODO Auto-generated constructor stub
+		}
+
+		public List<Devedores> ListaDevedores() throws FileNotFoundException {
+			List<Devedores> Devendo = new ArrayList<Devedores>();
+			
+			while (saldo < 0) {
+				double[] nomeCredore = {Alex(),Blake()};
+				double[]  nomeDevedore = {Alex(),Blake()};
+				double[] dividas = {Alex(), Blake()};
+				Devedores devendo = new Devedores(nomeCredore,nomeDevedore,dividas);
+				Devendo.add(devendo);
+				
+			}
+			
+			return Devendo;
+		}
+		
+		public static double Alex() {
+			String nome = "Alex";
+			String devedor = "Blake"; 
+			double saldo = 2+5-2-4-4;
+			return saldo;
+		}
+		public static double Blake() {
+			double saldo = 2+4-2-7;
+			return saldo;
+		}
+		public static double Casey() {
+			double saldo = 7+4-5;
+			return saldo;
+		}
+		
+		public static void main(String[] args) throws FileNotFoundException {
+			Devedores devedor = new Devedores();
+			List<Devedores> divida = devedor.ListaDevedores();
+			System.out.println(divida);
+		}
+
+		
+}
+

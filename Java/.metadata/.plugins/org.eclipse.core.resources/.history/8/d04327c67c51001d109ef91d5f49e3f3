@@ -1,0 +1,31 @@
+package br.com.comex.main;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+import br.com.comex.conexao.ConnectionFactory;
+import br.com.comex.modelo.Cliente;
+import dao.ClienteDAO;
+
+public class MainConsultaCliente {
+	
+	public static void main(String[] args) throws SQLException {
+
+        try {
+            new ConnectionFactory();
+			Connection conn = ConnectionFactory.recuperarConexao();
+            ClienteDAO cliDAO = new ClienteDAO(conn);
+
+            List<Cliente> cli = cliDAO.listar();
+
+            for (Cliente cliente : cli) {
+                System.out.println(cliente);
+            }
+            conn.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}

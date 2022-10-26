@@ -1,0 +1,14 @@
+package br.com.comex.main;
+
+public class MainInsereCliente {
+	public static void main(String[] args) {
+		String nome = " ";
+		String CPF = " ";
+		String Telefone = " ";
+		String Rua = " ";
+		String Numero = " ";
+		String Complemento = " ";
+		String Bairro = " ";
+		String Cidade = " ";
+	}
+}

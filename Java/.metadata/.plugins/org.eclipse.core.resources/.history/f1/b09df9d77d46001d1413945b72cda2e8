@@ -1,0 +1,58 @@
+package TesteFranca;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import br.com.comex.csv.PedidosCsv;
+
+public class Devedores {
+		private String nomeCredor;
+		private String nomeDevedor;
+		private String divida;
+		private double saldo;
+	
+		public Devedores(String nomeCredor, String nomeDevedor, String devendo) {
+
+			this.nomeCredor = nomeCredor;
+			this.nomeDevedor = nomeDevedor;
+			this.divida = divida;
+		}
+		
+		
+		public List<Devedores> ListaDevedores() throws FileNotFoundException {
+			List<Devedores> Devendo = new ArrayList<Devedores>();
+			while (saldo < 0) {
+				String[] valores = valores;
+				String categoria = valores[0];
+				String produto = valores[1];
+				double divida = valores[2];
+				Devedores devendo = new Devedores(nomeCredor,nomeDevedor,divida);
+				Devendo.add(devendo);
+				
+			}
+			
+			return Devendo;
+		}
+		
+		public static double Alex() {
+			double saldo = 2+5-2-4-4;
+			return saldo;
+		}
+		public static double Blake() {
+			double saldo = 2+4-2-7;
+			return saldo;
+		}
+		public static double Casey() {
+			double saldo = 7+4-5;
+			return saldo;
+		}
+		
+		public static void main(String[] args) {
+			System.out.println("Alex deve: "+Alex());
+		}
+
+		
+}
+

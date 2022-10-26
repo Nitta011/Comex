@@ -1,0 +1,6 @@
+
+public class Devedores {
+		String nome;
+		double saldo;
+		double devendo;
+}

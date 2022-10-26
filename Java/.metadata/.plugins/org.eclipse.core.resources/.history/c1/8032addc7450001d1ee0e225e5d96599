@@ -1,0 +1,10 @@
+package br.com.comex.main;
+
+public class MainComexWS {
+	public static void main(String[] args) {
+		ComexWS comexWS = new ComexWS();
+		String url = "http://localhost:8080/ComexWS";
+		System.out.println("Service rodando");
+		Endpoint.publish(url,comexWS);
+	}
+}

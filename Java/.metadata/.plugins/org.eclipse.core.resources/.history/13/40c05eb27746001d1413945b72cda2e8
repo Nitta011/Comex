@@ -1,0 +1,11 @@
+
+public class Devedores {
+		String nome;
+		double saldo;
+		double devendo;
+		
+		public Devedores() {
+			String nome1 = new String;
+			
+		}
+}
